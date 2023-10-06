@@ -7,16 +7,16 @@ public class Shooting : MonoBehaviour
     public Transform shootPoint;
 
     public float fireRate = 0.2f;
-    public float shootAngle = 0f;
-    public int projectileAmount = 1;
+    public float bulletSpreadAngle = 0f;
+    public int bulletsPerShot = 1;
 
-    public GameObject projectile;
+    public ProjectileBase m_projectilePrefab;
 
     private float cooldown = 0;
 
     private void Start()
     {
-        
+        cooldown = 0;
     }
 
     private void Update()
@@ -38,15 +38,14 @@ public class Shooting : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        for (int i = 0; i < projectileAmount; i++)
+        for (int i = 0; i < bulletsPerShot; i++)
         {
-            float t_angle = Random.Range(-shootAngle, shootAngle) / 2;
-            Vector3 t_rotationVector = new(0, 0, t_angle);
-            Quaternion t_direction = Quaternion.Euler(t_rotationVector);
+            float t_angle = Random.Range(-bulletSpreadAngle, bulletSpreadAngle);
+            Vector3 t_bulletSpreadAngle = new(0, 0, t_angle / 2);
+            Quaternion t_direction = Quaternion.Euler(shootPoint.rotation.eulerAngles + t_bulletSpreadAngle);
 
-            GameObject t_projectile = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
-            t_projectile.GetComponent<Rigidbody2D>().AddForce(shootPoint.up * 10, ForceMode2D.Impulse);
-            Destroy(t_projectile, 1f);
+            ProjectileBase t_projectile = Instantiate(m_projectilePrefab, shootPoint.position, t_direction);
+            t_projectile.Initialize(5, 10);
         }
     }
 }
