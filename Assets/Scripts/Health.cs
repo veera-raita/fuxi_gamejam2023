@@ -1,16 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maximumHealth = 50;
-
     public int CurrentHealth { get; private set; }
+
+    private CharacterStatHolder characterStatHolder;
 
     private void Start()
     {
-        CurrentHealth = maximumHealth;
+        if (TryGetComponent(out characterStatHolder))
+        {
+            CurrentHealth = (int)characterStatHolder.MaximumHealth;
+        }
+        else
+        {
+            CurrentHealth = maximumHealth;
+        }        
     }
 
     public void TakeDamage(int t_damage)

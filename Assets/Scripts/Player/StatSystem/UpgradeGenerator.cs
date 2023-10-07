@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UpgradeGenerator : MonoBehaviour
 {
-    [SerializeField] private UpgradePool profile;
-    [Space]
     [SerializeField] private List<UpgradePoolItem> m_upgradePool;
     [SerializeField] private List<UpgradeBase> m_ownedUpgrades;
 
@@ -51,7 +49,7 @@ public class UpgradeGenerator : MonoBehaviour
         UpgradePoolItem t_poolItem = m_upgradePool.Find(t_instance => t_instance.upgrade == t_upgrade);
         if (t_poolItem != null)
         {
-            m_upgradePool.Remove(t_poolItem);
+            //m_upgradePool.Remove(t_poolItem);
             m_ownedUpgrades.Add(t_upgrade);
         }
     }
