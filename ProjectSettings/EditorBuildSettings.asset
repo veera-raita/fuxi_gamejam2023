@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu FLASHBANG WARNING.unity
+    guid: 66cbd892e61f153409c6fc843471f706
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 5bf8afad945c86e43b3a8a9c510d138d
   m_configObjects: {}
