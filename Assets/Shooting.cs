@@ -6,17 +6,14 @@ public class Shooting : MonoBehaviour
 {
     public Transform shootPoint;
 
-    public float fireRate = 0.2f;
-    public float bulletSpreadAngle = 0f;
-    public int bulletsPerShot = 1;
-
     public ProjectileBase m_projectilePrefab;
+    private CharacterStatHolder m_characterStatHolder;
 
     private float cooldown = 0;
 
     private void Start()
     {
-        cooldown = 0;
+        m_characterStatHolder = GetComponent<CharacterStatHolder>();
     }
 
     private void Update()
@@ -29,7 +26,7 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
-        if (cooldown + fireRate <= Time.time)
+        if (cooldown + m_characterStatHolder.RateOfFire <= Time.time)
         {
             SpawnProjectile();
             cooldown = Time.time;
@@ -38,14 +35,16 @@ public class Shooting : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        for (int i = 0; i < bulletsPerShot; i++)
+        for (int i = 0; i < m_characterStatHolder.ProjectileAmount; i++)
         {
-            float t_angle = Random.Range(-bulletSpreadAngle, bulletSpreadAngle);
+            float t_angleValue = m_characterStatHolder.ProjectileSpread;
+            float t_angle = Random.Range(-t_angleValue, t_angleValue);
             Vector3 t_bulletSpreadAngle = new(0, 0, t_angle / 2);
             Quaternion t_direction = Quaternion.Euler(shootPoint.rotation.eulerAngles + t_bulletSpreadAngle);
 
             ProjectileBase t_projectile = Instantiate(m_projectilePrefab, shootPoint.position, t_direction);
-            t_projectile.Initialize(5, 10);
+            t_projectile.Initialize((int)m_characterStatHolder.ProjectileDamage,
+                                    (int)m_characterStatHolder.ProjectileSpeed);
         }
     }
 }

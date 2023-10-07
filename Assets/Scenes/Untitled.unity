@@ -226,8 +226,10 @@ GameObject:
   - component: {fileID: 546681123}
   - component: {fileID: 546681122}
   - component: {fileID: 546681124}
+  - component: {fileID: 546681125}
   - component: {fileID: 546681121}
   - component: {fileID: 546681120}
+  - component: {fileID: 546681126}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -275,9 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1738932442}
-  fireRate: 0.2
-  bulletSpreadAngle: 50
-  bulletsPerShot: 4
   m_projectilePrefab: {fileID: 4320235097431268848, guid: 874ab92d19e692745958434671243c13, type: 3}
 --- !u!114 &546681122
 MonoBehaviour:
@@ -291,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab244a93beea40041be78ed3cac691cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
   m_movementVector: {x: 0, y: 0}
+  m_currentSpeed: 0
 --- !u!4 &546681123
 Transform:
   m_ObjectHideFlags: 0
@@ -323,7 +322,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mousePosition: {x: 0, y: 0}
-  m_projectileSpawnPoint: {fileID: 1367663633}
+  m_pivot: {fileID: 1367663633}
+--- !u!114 &546681125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546681119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892a4a5c1f9e7134693d04aecd401395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_stats:
+  - name: Movement Speed
+    baseValue: 5
+  - name: Maximum Health
+    baseValue: 10
+  - name: Rate Of Fire
+    baseValue: 0.1
+  - name: Projectile Damage
+    baseValue: 10
+  - name: Projectile Range
+    baseValue: 10
+  - name: Projectile Amount
+    baseValue: 3
+  - name: Projectile Speed
+    baseValue: 10
+  - name: Projectile Spread
+    baseValue: 10
+--- !u!114 &546681126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546681119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cb51966434fdd47ad0475b7c2abbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 546681119}
+  upgrade: {fileID: 11400000, guid: 79d107c996f932241acbfa58d14896d9, type: 2}
 --- !u!1 &796200593
 GameObject:
   m_ObjectHideFlags: 0

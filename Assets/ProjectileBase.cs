@@ -22,7 +22,5 @@ public class ProjectileBase : MonoBehaviour
         {
             t_health.TakeDamage(damage);
         }
-
-        Debug.Log("amogus");
     }
 }
