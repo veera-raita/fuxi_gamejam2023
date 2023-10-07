@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -13,10 +11,7 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.FindWithTag("player");      //player is any object with the tag "player", be sure to tag player properly
         GameManager = GameObject.FindWithTag("GameController");
-        speed = speed + (0.1f * (float)GameManager.GetComponent<WaveController>().WaveNumber);
-        speed = speed * Random.Range(1.0f, 1.5f);
-
-
+        speed *= Random.Range(1.0f, 1.5f) + (0.1f * GameManager.GetComponent<WaveController>().WaveNumber);
     }
 
     // Update is called once per frame
@@ -24,5 +19,14 @@ public class EnemyMovement : MonoBehaviour
     {
         float realSpeed = speed * Time.deltaTime;        //randomize speeds a little bit
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, realSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), 
+                collision.gameObject.GetComponent<Collider2D>());
+        }
     }
 }

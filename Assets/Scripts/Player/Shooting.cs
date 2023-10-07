@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -29,6 +27,8 @@ public class Shooting : MonoBehaviour
         if (cooldown + m_characterStatHolder.RateOfFire <= Time.time)
         {
             SpawnProjectile();
+
+            CameraShake.instance.ShakeCamera(5f, .1f);
             cooldown = Time.time;
         }       
     }
