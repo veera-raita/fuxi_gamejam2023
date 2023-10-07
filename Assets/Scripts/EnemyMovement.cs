@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject GameManager;
+    private GameObject player;
+    private GameObject GameManager;
     public float speed = 10.0f;
 
 
@@ -13,8 +13,9 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("player");      //player is any object with the tag "player", be sure to tag player properly
-        speed = speed + 0.1f * GameManager.GetComponent<WaveController>().WaveNumber;
-        speed = speed * Random.Range(1.0f, 3.0f);
+        GameManager = GameObject.FindWithTag("GameController");
+        speed = speed + (0.1f * (float)GameManager.GetComponent<WaveController>().WaveNumber);
+        speed = speed * Random.Range(1.0f, 100.0f);
     }
 
     // Update is called once per frame
