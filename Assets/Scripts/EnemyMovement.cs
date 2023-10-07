@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
     private GameObject GameManager;
     public float speed = 10.0f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +15,8 @@ public class EnemyMovement : MonoBehaviour
         GameManager = GameObject.FindWithTag("GameController");
         speed = speed + (0.1f * (float)GameManager.GetComponent<WaveController>().WaveNumber);
         speed = speed * Random.Range(1.0f, 1.5f);
+
+
     }
 
     // Update is called once per frame

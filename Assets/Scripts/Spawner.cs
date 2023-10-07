@@ -24,30 +24,30 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemyUp()
     {
-        float rndX1 = Random.Range(-55.0f, 55.0f);
+        float rndX1 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(rndX1, 21), enemies[rnd].transform.rotation);
+        Instantiate(enemies[rnd], new Vector3(rndX1, 15), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyUp", Random.Range(1.5f, 3.0f));
     }
     private void SpawnEnemyDown()
     {
-        float rndX2 = Random.Range(-55.0f, 55.0f);
+        float rndX2 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(rndX2, -21), enemies[rnd].transform.rotation);
+        Instantiate(enemies[rnd], new Vector3(rndX2, -15), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyDown", Random.Range(1.5f, 3.0f));
     }
     private void SpawnEnemyRight()
     {
-        float rndY1 = Random.Range(-23.0f, 23.0f);
+        float rndY1 = Random.Range(-13.0f, 13.0f);
         int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(52, rndY1), enemies[rnd].transform.rotation);
+        Instantiate(enemies[rnd], new Vector3(15, rndY1), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyRight", Random.Range(1.5f, 3.0f));
     }
     private void SpawnEnemyLeft()
     {
-        float rndY2 = Random.Range(-23.0f, 23.0f);
+        float rndY2 = Random.Range(-13.0f, 13.0f);
         int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(-52, rndY2), enemies[rnd].transform.rotation);
+        Instantiate(enemies[rnd], new Vector3(-15, rndY2), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyLeft", Random.Range(1.5f, 3.0f));
     }
 

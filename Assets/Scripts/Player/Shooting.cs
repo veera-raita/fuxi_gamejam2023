@@ -44,6 +44,7 @@ public class Shooting : MonoBehaviour
 
             ProjectileBase t_projectile = Instantiate(m_projectilePrefab, shootPoint.position, t_direction);
             t_projectile.Initialize((int)m_characterStatHolder.ProjectileDamage,
+                                    (int)m_characterStatHolder.ProjectileRange,
                                     (int)m_characterStatHolder.ProjectileSpeed);
         }
     }
