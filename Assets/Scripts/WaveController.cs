@@ -12,19 +12,19 @@ public class WaveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WaveNumber = 1;
+        WaveNumber = 0;
         StartCoroutine(Wave());
     }
 
-    IEnumerator Wave()
+    public IEnumerator Wave()
     {
         yield return new WaitForSeconds(WaveCountdown);
         WaveRunning = true;
+        WaveNumber++;
         WaveTimer = 20.0f + 5.0f * (float)WaveNumber;
         yield return new WaitForSeconds(WaveTimer);
         Debug.Log("yeah " + Time.time);
         Invoke("WavesPaused", 0);
-        WaveNumber++;
         WaveRunning = false;
     }
 

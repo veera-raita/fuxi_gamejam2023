@@ -4,6 +4,7 @@ public class UpgradeTest : MonoBehaviour
 {
     public UpgradeBase upgrade;
     public SpriteRenderer sprite;
+    public GameObject WaveMeme;
 
     private void Start()
     {
@@ -25,6 +26,9 @@ public class UpgradeTest : MonoBehaviour
             {
                 Destroy(mogus.transform.GetChild(0).gameObject);
             }
+
+            WaveMeme = GameObject.FindWithTag("GameController");
+            StartCoroutine(WaveMeme.GetComponent<WaveController>().Wave());
         }
     }
 }
