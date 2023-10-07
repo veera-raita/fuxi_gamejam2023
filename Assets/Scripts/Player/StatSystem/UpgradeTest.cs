@@ -2,20 +2,29 @@ using UnityEngine;
 
 public class UpgradeTest : MonoBehaviour
 {
-    public UpgradePool m_upgradePool;
     public UpgradeBase upgrade;
+    public SpriteRenderer sprite;
 
     private void Start()
     {
-        upgrade =;
+        sprite.sprite = upgrade.icon;
     }
 
     private void OnTriggerEnter2D(Collider2D t_collider)
     {
-        if (t_collider.TryGetComponent(out MovementController t_stats))
+        if (t_collider.GetComponent<CharacterStatHolder>())
         {
             upgrade.Create(t_collider.gameObject);
-            //m_upgradePool.PoolItems.Remove(upgrade);
+
+            UpgradeGenerator t_generator = FindObjectOfType<UpgradeGenerator>();
+            t_generator.RemoveFromPool(upgrade);
+
+            var sus = FindObjectOfType<UpgradeSpawner>();
+
+            foreach(var mogus in sus.spawnPoints)
+            {
+                Destroy(mogus.transform.GetChild(0).gameObject);
+            }
         }
     }
 }
