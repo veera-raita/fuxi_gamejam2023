@@ -257,9 +257,11 @@ GameObject:
   - component: {fileID: 318861767}
   - component: {fileID: 318861766}
   - component: {fileID: 318861765}
+  - component: {fileID: 318861769}
+  - component: {fileID: 318861768}
   m_Layer: 0
   m_Name: Control
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +315,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318861768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318861764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892109e4ef127de43aaa842b1268f0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 2440271232918905991, guid: 89efe3e2a184b344eaf5412e45963fcf, type: 3}
+  - {fileID: 3261366709201201035, guid: 3821f46c3053813459f3da01865b3960, type: 3}
+  - {fileID: 1892435229599640692, guid: 1ce132cf094aecc4ba2a8ce366359d17, type: 3}
+  waveN: 0
+--- !u!114 &318861769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318861764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4965bd17646ad8c40b81139a2ae88a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveNumber: 0
+  WaveCountdown: 0
+  WaveTimer: 0
+  WaveRunning: 0
 --- !u!1 &546681119
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +366,7 @@ GameObject:
   - component: {fileID: 546681126}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -28,7 +28,8 @@ public class UpgradeTest : MonoBehaviour
             }
 
             WaveMeme = GameObject.FindWithTag("GameController");
-            StartCoroutine(WaveMeme.GetComponent<WaveController>().Wave());
+            Debug.Log("meowdy");
+            WaveMeme.GetComponent<WaveController>().StartWave();
         }
     }
 }

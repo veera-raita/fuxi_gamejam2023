@@ -16,6 +16,11 @@ public class WaveController : MonoBehaviour
         StartCoroutine(Wave());
     }
 
+    public void StartWave()
+    {
+        StartCoroutine(Wave());
+    }
+
     public IEnumerator Wave()
     {
         yield return new WaitForSeconds(WaveCountdown);
@@ -24,7 +29,6 @@ public class WaveController : MonoBehaviour
         WaveTimer = 20.0f + 5.0f * (float)WaveNumber;
         yield return new WaitForSeconds(WaveTimer);
         Debug.Log("yeah " + Time.time);
-        Invoke("WavesPaused", 0);
         WaveRunning = false;
     }
 

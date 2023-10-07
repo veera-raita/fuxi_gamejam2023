@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
             GameHelper = true;
         }
         if (GameController.GetComponent<WaveController>().WaveRunning == true && GameHelper == true)    //tässä yritys saada viholliset spawnaamaan vain kun
-        {                                                                                               //wave on oikeasti käynnissä
+        {                                                                                               //wave on oikeasti käynnissä. en tiedä kuin tärkeä GameHelper
             GameHelper = false;
             Invoke("SpawnHandler", 2);
         }
