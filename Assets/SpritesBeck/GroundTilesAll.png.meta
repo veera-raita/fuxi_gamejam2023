@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 992
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,9 +127,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4000
-        width: 996
-        height: 996
+        y: 4001
+        width: 998
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: GroundTilesAll_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 4000
-        width: 1000
-        height: 1000
+        x: 1001
+        y: 4003
+        width: 997
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: GroundTilesAll_2
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 4000
-        width: 1000
-        height: 1000
+        x: 2002
+        y: 4003
+        width: 995
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: GroundTilesAll_3
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 4000
-        width: 1000
-        height: 1000
+        x: 3002
+        y: 4002
+        width: 996
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: GroundTilesAll_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3000
-        width: 1000
-        height: 1000
+        x: 2
+        y: 3002
+        width: 996
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: GroundTilesAll_5
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 3000
-        width: 1000
-        height: 1000
+        x: 1002
+        y: 3002
+        width: 996
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: GroundTilesAll_6
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 3000
-        width: 1000
-        height: 1000
+        x: 2003
+        y: 3002
+        width: 995
+        height: 998
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: GroundTilesAll_7
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 3000
-        width: 1000
-        height: 1000
+        x: 3002
+        y: 3002
+        width: 996
+        height: 998
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: GroundTilesAll_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2000
-        width: 1000
-        height: 1000
+        x: 3
+        y: 2002
+        width: 994
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: GroundTilesAll_9
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 2000
-        width: 1000
-        height: 1000
+        x: 1003
+        y: 2002
+        width: 994
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: GroundTilesAll_10
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2000
-        width: 1000
-        height: 1000
+        x: 2002
+        y: 2003
+        width: 995
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: GroundTilesAll_11
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2000
-        width: 1000
-        height: 1000
+        x: 3002
+        y: 2003
+        width: 996
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: GroundTilesAll_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 1000
-        height: 1000
+        x: 3
+        y: 1002
+        width: 995
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,10 +399,10 @@ TextureImporter:
       name: GroundTilesAll_13
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 1000
-        height: 1000
+        x: 1002
+        y: 1002
+        width: 996
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: GroundTilesAll_14
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1000
-        width: 1000
-        height: 1000
+        x: 2002
+        y: 1002
+        width: 996
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +441,10 @@ TextureImporter:
       name: GroundTilesAll_15
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 1000
-        width: 1000
-        height: 1000
+        x: 3002
+        y: 1002
+        width: 996
+        height: 997
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: GroundTilesAll_16
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 1000
-        height: 1000
+        x: 3
+        y: 3
+        width: 995
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: GroundTilesAll_17
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 1000
-        height: 1000
+        x: 1002
+        y: 2
+        width: 996
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,10 +504,10 @@ TextureImporter:
       name: GroundTilesAll_18
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 1000
-        height: 1000
+        x: 2003
+        y: 2
+        width: 995
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: GroundTilesAll_19
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 0
-        width: 1000
-        height: 1000
+        x: 3002
+        y: 2
+        width: 996
+        height: 995
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
