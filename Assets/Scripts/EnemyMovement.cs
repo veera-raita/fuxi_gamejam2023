@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindWithTag("player");      //player is any object with the tag "player", be sure to tag player properly
         GameManager = GameObject.FindWithTag("GameController");
         speed = speed + (0.1f * (float)GameManager.GetComponent<WaveController>().WaveNumber);
-        speed = speed * Random.Range(1.0f, 100.0f);
+        speed = speed * Random.Range(1.0f, 1.5f);
     }
 
     // Update is called once per frame
