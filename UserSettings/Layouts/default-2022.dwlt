@@ -347,7 +347,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player/StatSystem/UpgradePoolItems
+    - Assets/SpritesBeck
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -355,16 +355,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player/StatSystem/UpgradePoolItems
+  - Assets/SpritesBeck
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\sydney.kolehmainen\Documents\GitHub\fuxi_gamejam2023
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae630000
-    m_LastClickedID: 25518
-    m_ExpandedIDs: 000000001263000022630000266300009263000000ca9a3bffffff7f
+    m_SelectedIDs: d8620000
+    m_LastClickedID: 25304
+    m_ExpandedIDs: 00000000c2620000d46200000a6300000c63000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,7 +392,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000012630000
+    m_ExpandedIDs: 00000000c2620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,9 +532,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: d8620000
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfaffff98620000b2620000b6620000
+      m_ExpandedIDs: a47dfeffc6ecfefff4ecfeff2eeefeffdcf7feffccadffff58e5ffffe0faffff486200006262000066620000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -622,7 +622,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -648,7 +648,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -873,7 +873,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
-      index: 8
+      index: 12
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -940,9 +940,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.0505078, y: 0.32154357, z: -0.70379317}
+    m_Target: {x: 1.7482934, y: -0.13972944, z: -0.7191912}
     speed: 2
-    m_Value: {x: 1.0505078, y: 0.32154357, z: -0.70379317}
+    m_Value: {x: 1.7482934, y: -0.13972944, z: -0.7191912}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -992,9 +992,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.267032
+    m_Target: 5.806842
     speed: 2
-    m_Value: 4.267032
+    m_Value: 5.806842
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1138,9 +1138,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 842
-    width: 1956
-    height: 509
+    y: 1001
+    width: 2754
+    height: 350
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
