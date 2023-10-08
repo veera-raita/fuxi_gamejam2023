@@ -11,15 +11,22 @@ public class MenuManager : MonoBehaviour
     public Button CloseMenu;
     public Button QuitGame;
 
+    public AudioClip MenuClick;
+    public AudioSource MenuClickPlayer;
+
     public GameObject CreditsShade;
     public GameObject CreditsScreen;
     public GameObject CloseMenuHandler;
 
     void Start()
     {
+        StartButton.onClick.AddListener(() => ClickSound());
         StartButton.onClick.AddListener(() => SceneChange());
+        CreditsButton.onClick.AddListener(() => ClickSound());
         CreditsButton.onClick.AddListener(() => ShowCredits());
+        CloseMenu.onClick.AddListener(() => ClickSound());
         CloseMenu.onClick.AddListener(() => CloseCredits());
+        QuitGame.onClick.AddListener(() => ClickSound());
         QuitGame.onClick.AddListener(() => EndGame());
     }
 
@@ -47,4 +54,8 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void ClickSound()
+    {
+        MenuClickPlayer.PlayOneShot(MenuClick, 1.0f);
+    }
 }
