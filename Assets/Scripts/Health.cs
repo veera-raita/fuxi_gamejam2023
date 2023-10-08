@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
 
     private CharacterStatHolder characterStatHolder;
+    private GameOver EndGame;
 
     [SerializeField] private GameObject GameOverScreen;
 
@@ -45,8 +46,7 @@ public class Health : MonoBehaviour
 
         if (gameObject.CompareTag("player"))
         {
-            Debug.Log("GAMEOVER PLEASEJKHNDSKFLJ");
-            GameOverScreen.SetActive(true);
+            EndGame.GameOverFunction();
         }
     }
 }
