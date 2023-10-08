@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1169623274811346446}
   m_Layer: 0
   m_Name: Enemy_Pitchfork
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 30
+  damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
+  invincible: 0
 --- !u!114 &179634827814120395
 MonoBehaviour:
   m_ObjectHideFlags: 0

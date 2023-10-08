@@ -9,9 +9,13 @@ public class WaveController : MonoBehaviour
     public float WaveTimer;
     public bool WaveRunning;
 
+    private UpgradeSpawner spawner;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawner = GetComponent<UpgradeSpawner>();
+
         WaveNumber = 0;
         StartCoroutine(Wave());
     }
@@ -26,15 +30,21 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(WaveCountdown);
         WaveRunning = true;
         WaveNumber++;
-        WaveTimer = 20.0f + 5.0f * (float)WaveNumber;
+        WaveTimer = 10.0f + (5.0f * WaveNumber);
         yield return new WaitForSeconds(WaveTimer);
-        Debug.Log("yeah " + Time.time);
+        //Debug.Log("yeah " + Time.time);
         WaveRunning = false;
+        MassMurderScript();
+        spawner.SpawnerCheck();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void MassMurderScript()
     {
-        
+        var enemies = FindObjectsOfType<EnemyMovement>();
+
+        foreach(var health in enemies)
+        {
+            health.GetComponent<Health>().TakeDamage(9999);
+        }
     }
 }

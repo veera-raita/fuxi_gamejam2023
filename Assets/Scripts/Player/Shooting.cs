@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
         {
             SpawnProjectile();
 
-            CameraShake.instance.ShakeCamera(5f, .1f);
+            CameraShake.Instance.ShakeCamera(5f, .1f);
             cooldown = Time.time;
         }       
     }

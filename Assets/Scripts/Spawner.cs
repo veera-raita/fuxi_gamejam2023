@@ -38,14 +38,14 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemyRight()
     {
-        float rndY1 = Random.Range(-13.0f, 13.0f);
+        float rndY1 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(15, rndY1), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyRight", Random.Range(1.5f, 3.0f));
     }
     private void SpawnEnemyLeft()
     {
-        float rndY2 = Random.Range(-13.0f, 13.0f);
+        float rndY2 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(-15, rndY2), enemies[rnd].transform.rotation);
         Invoke("SpawnEnemyLeft", Random.Range(1.5f, 3.0f));
@@ -70,6 +70,5 @@ public class Spawner : MonoBehaviour
             GameHelper = false;
             Invoke("SpawnHandler", 2);
         }
-
     }
 }
