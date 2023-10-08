@@ -1,10 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileBase : MonoBehaviour
 {
-    public int damage;
-    public float range;
-    public float speed;
+    private int damage;
+    private float range;
+    private float speed;
+
+    public GameObject particle;
 
     public void Initialize(int t_damage, int t_range, int t_speed)
     {
@@ -25,6 +28,8 @@ public class ProjectileBase : MonoBehaviour
         {
             if (t_collider.TryGetComponent(out Health t_health))
             {
+                GameObject t_particle = Instantiate(particle, transform.position, Quaternion.identity);
+                Destroy(t_particle, 5f);
                 t_health.TakeDamage(damage);
                 Destroy(gameObject);
             }

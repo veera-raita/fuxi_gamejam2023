@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 30
+  deathEffect: {fileID: 4429920631967803801, guid: 8d18b9a5c0bbf2049b7604f941028eb6, type: 3}
   damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
   invincible: 0
 --- !u!114 &1150623991322563458

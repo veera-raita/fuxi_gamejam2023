@@ -11,8 +11,6 @@ public class DamagePopup : MonoBehaviour
     private TextMeshPro textMesh;
     private Color textColor;
 
-    private Vector3 moveVector;
-
     private void Awake()
     {
         textMesh = GetComponent<TextMeshPro>();
@@ -23,8 +21,6 @@ public class DamagePopup : MonoBehaviour
         textMesh.SetText(t_damageAmount.ToString());
         textColor = textMesh.color;
         disappearTimer = DISAPPEAR_TIMER_MAX;
-
-        moveVector = new Vector3(1, 1) * 30f;
     }
 
     private void Update()
@@ -35,12 +31,12 @@ public class DamagePopup : MonoBehaviour
         if(disappearTimer > DISAPPEAR_TIMER_MAX * .5f)
         {
             float increaseScale = 1f;
-            transform.localScale += Vector3.one * increaseScale * Time.deltaTime;
+            transform.localScale += increaseScale * Time.deltaTime * Vector3.one;
         }
         else
         {
             float decreaseScale = 1f;
-            transform.localScale -= Vector3.one * decreaseScale * Time.deltaTime;
+            transform.localScale -= decreaseScale * Time.deltaTime * Vector3.one;
         }
 
         disappearTimer -= Time.deltaTime;
