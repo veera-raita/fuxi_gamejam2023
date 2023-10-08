@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
   m_Name: Item6
   m_EditorClassIdentifier: 
-  upgradeName: 
+  upgradeName: Queen
   upgradeDescription: 
-  icon: {fileID: 0}
-  m_statModifiers: []
+  icon: {fileID: 21300000, guid: 21a0e3420a519db40a8fe51263cb9b6d, type: 3}
+  m_statModifiers:
+  - statToBoost: 0
+    value: 3
+    method: 100
+  - statToBoost: 2
+    value: -0.05
+    method: 100
+  - statToBoost: 3
+    value: 4
+    method: 100
+  - statToBoost: 3
+    value: 4
+    method: 100
+  - statToBoost: 6
+    value: 2
+    method: 100

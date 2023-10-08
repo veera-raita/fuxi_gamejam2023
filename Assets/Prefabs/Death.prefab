@@ -1547,8 +1547,8 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: 21300000, guid: f384a8a29ddf36a4c8e2fe74d0b97941, type: 3}
-    - sprite: {fileID: 21300000, guid: fe1dc85d0f72bbe4a96acd8f55163748, type: 3}
-    - sprite: {fileID: 21300000, guid: a9575f3feb56a55428f070b88910e8a7, type: 3}
+    - sprite: {fileID: 21300000, guid: a92d380d7ede9c94a8cfae7703c76b73, type: 3}
+    - sprite: {fileID: 21300000, guid: dbcb3d97ceb8dca4ca0f00f27ccd2f32, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

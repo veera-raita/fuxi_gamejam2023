@@ -16,10 +16,15 @@ public class GameOver : MonoBehaviour
     public GameObject StatBlock;
 
 
-    public void GameOverFunction()
+    public void Start()
     {
-        StatBlock.SetActive(false);
+        
+    }
+
+    public void DoStuff()
+    {
         GameOverScrn.SetActive(true);
+        StatBlock.SetActive(false);        
         RestartButton.onClick.AddListener(() => Clicker());
         RestartButton.onClick.AddListener(() => SceneRestart());
         MenuButton.onClick.AddListener(() => Clicker());

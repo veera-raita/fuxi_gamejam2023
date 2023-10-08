@@ -11,10 +11,12 @@ public class Health : MonoBehaviour
     private CharacterStatHolder characterStatHolder;
     private GameOver EndGame;
 
-    [SerializeField] private GameObject GameOverScreen;
+    public GameObject goscreen;
 
     private void Start()
     {
+        EndGame = FindObjectOfType<GameOver>();
+
         if (TryGetComponent(out characterStatHolder))
         {
             CurrentHealth = (int)characterStatHolder.MaximumHealth;
@@ -43,12 +45,15 @@ public class Health : MonoBehaviour
     {
         GameObject t_death = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(t_death, 5f);
-        Debug.Log(gameObject.name + " has died!");
-        Destroy(gameObject);
 
         if (gameObject.CompareTag("player"))
         {
-            EndGame.GameOverFunction();
+            EndGame.DoStuff();
+            Destroy(gameObject);
         }
+
+        Destroy(gameObject);
+
+        
     }
 }

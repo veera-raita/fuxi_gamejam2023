@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 4605890}
   - component: {fileID: 4605889}
   - component: {fileID: 4605893}
+  - component: {fileID: 4605895}
   - component: {fileID: 4605894}
   m_Layer: 5
   m_Name: Canvas
@@ -343,6 +344,24 @@ MonoBehaviour:
   spd_Text: {fileID: 1726077786}
   rng_Text: {fileID: 1951538096}
   pwr_Text: {fileID: 678915587}
+--- !u!114 &4605895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b334decb2d406354ca54dbe56a83331d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestartButton: {fileID: 1239392730}
+  MenuButton: {fileID: 1896130207}
+  MenuClick: {fileID: 0}
+  MenuClickPlayer: {fileID: 0}
+  GameOverScrn: {fileID: 63739062}
+  StatBlock: {fileID: 1806576778}
 --- !u!1 &63739062
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,8 +986,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6c89d3bfa7d83a549bc793287de1a18b, type: 2}
   amountOfChoices: 3
-  readyToSpawn: 0
-  gameHelper: 0
   itemPrefab: {fileID: 1918437456705987364, guid: 0dbea7ccbfec86f4794b3dcb6dfad658, type: 3}
   spawnPoints:
   - {fileID: 1628981060}
@@ -2415,7 +2432,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.0030242205, y: 0.003147006, z: 0}
   m_MaxChunkCount: 16
@@ -7857,7 +7874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1806576779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7873,9 +7890,9 @@ RectTransform:
   - {fileID: 733045690}
   m_Father: {fileID: 4605892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -175, y: 0}
   m_SizeDelta: {x: 320, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806576780
@@ -9095,9 +9112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 50
-  damagePopup: {fileID: 0}
-  invincible: 1
-  GameOverScreen: {fileID: 63739062}
+  deathEffect: {fileID: 7469528133118470595, guid: 697c4bd632d3c724e86c93a0b63a365e, type: 3}
+  damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
+  invincible: 0
+  goscreen: {fileID: 63739062}
 --- !u!4 &1109405602396471666
 Transform:
   m_ObjectHideFlags: 0
@@ -9295,7 +9313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1109405602396471666}
-  m_projectilePrefab: {fileID: 4320235097431268848, guid: 874ab92d19e692745958434671243c13, type: 3}
+  m_projectilePrefab: {fileID: 9119752882328761197, guid: b1fe331d5296aaf479c3d92ac9241236, type: 3}
 --- !u!114 &3581110351649398488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9372,19 +9390,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stats:
   - name: Movement Speed
-    baseValue: 5
+    baseValue: 3
   - name: Maximum Health
     baseValue: 5
   - name: Rate Of Fire
-    baseValue: 0.1
+    baseValue: 0.8
   - name: Projectile Damage
-    baseValue: 10
+    baseValue: 5
   - name: Projectile Range
-    baseValue: 10
+    baseValue: 5
   - name: Projectile Amount
-    baseValue: 3
+    baseValue: 1
   - name: Projectile Speed
-    baseValue: 10
+    baseValue: 5
   - name: Projectile Spread
     baseValue: 10
 --- !u!4 &7489634162065317610

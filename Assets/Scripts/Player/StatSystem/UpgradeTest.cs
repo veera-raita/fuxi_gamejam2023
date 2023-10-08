@@ -8,7 +8,7 @@ public class UpgradeTest : MonoBehaviour
 
     private void Start()
     {
-        //sprite.sprite = upgrade.icon;
+        sprite.sprite = upgrade.icon;
     }
 
     private void OnTriggerEnter2D(Collider2D t_collider)

@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: 
   upgradeDescription: 
-  icon: {fileID: 0}
-  m_statModifiers: []
+  icon: {fileID: 21300000, guid: 3ce9e168bd70ec448aec38842e9b8c4a, type: 3}
+  m_statModifiers:
+  - statToBoost: 3
+    value: 4
+    method: 100
