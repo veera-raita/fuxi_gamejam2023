@@ -6,8 +6,6 @@ public class UpgradeSpawner : MonoBehaviour
     [Space, Header("Upgrade Generation")]
     [SerializeField] private UpgradePool profile;
     [SerializeField] private int amountOfChoices = 3;
-    [SerializeField] private bool readyToSpawn = false;
-    [SerializeField] private bool gameHelper;
 
     [Space, Header("References")]
     public UpgradeTest itemPrefab;

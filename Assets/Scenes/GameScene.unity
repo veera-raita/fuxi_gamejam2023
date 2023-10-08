@@ -324,8 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 6c89d3bfa7d83a549bc793287de1a18b, type: 2}
   amountOfChoices: 3
-  readyToSpawn: 0
-  gameHelper: 0
   itemPrefab: {fileID: 1918437456705987364, guid: 0dbea7ccbfec86f4794b3dcb6dfad658, type: 3}
   spawnPoints:
   - {fileID: 1628981060}
@@ -5657,7 +5655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1109405602396471666}
-  m_projectilePrefab: {fileID: 4320235097431268848, guid: 874ab92d19e692745958434671243c13, type: 3}
+  m_projectilePrefab: {fileID: 9119752882328761197, guid: b1fe331d5296aaf479c3d92ac9241236, type: 3}
 --- !u!114 &3581110351649398488
 MonoBehaviour:
   m_ObjectHideFlags: 0
