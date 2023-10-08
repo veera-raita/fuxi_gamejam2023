@@ -35,6 +35,6 @@ public class GameOver : MonoBehaviour
     }
     private void ReturnMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
