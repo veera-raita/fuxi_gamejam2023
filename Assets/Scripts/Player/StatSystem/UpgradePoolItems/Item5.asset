@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
   m_Name: Item5
   m_EditorClassIdentifier: 
-  upgradeName: 
-  upgradeDescription: 
+  upgradeName: Tower
+  upgradeDescription: teksti5
   icon: {fileID: 21300000, guid: 3ce9e168bd70ec448aec38842e9b8c4a, type: 3}
   m_statModifiers:
   - statToBoost: 3

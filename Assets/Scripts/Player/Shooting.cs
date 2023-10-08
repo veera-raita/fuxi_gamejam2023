@@ -7,6 +7,9 @@ public class Shooting : MonoBehaviour
     public ProjectileBase m_projectilePrefab;
     private CharacterStatHolder m_characterStatHolder;
 
+    public AudioClip shootSound;
+    public AudioSource shootSoundSource;
+
     private float cooldown = 0;
 
     private void Start()
@@ -27,6 +30,7 @@ public class Shooting : MonoBehaviour
         if (cooldown + m_characterStatHolder.RateOfFire <= Time.time)
         {
             SpawnProjectile();
+            shootSoundSource.PlayOneShot(shootSound, 1.0f);
 
             CameraShake.Instance.ShakeCamera(5f, .1f);
             cooldown = Time.time;

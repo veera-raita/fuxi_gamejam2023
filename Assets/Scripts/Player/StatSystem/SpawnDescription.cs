@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class SpawnDescription : MonoBehaviour
 {
-    private Description description;
-    private UpgradeTest test;
+    public Description description;
+    public UpgradeTest test;
 
-    private void Start()
+    private void Update()
     {
-        description = FindObjectOfType<Description>();
         test = GetComponentInChildren<UpgradeTest>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<CharacterStatHolder>())
         {
             description.upgrade = test.upgrade;
         }
-        else
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<CharacterStatHolder>())
         {
             description.upgrade = null;
         }

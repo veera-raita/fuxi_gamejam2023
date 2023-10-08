@@ -11,14 +11,19 @@ public class Health : MonoBehaviour
     private CharacterStatHolder characterStatHolder;
     private GameOver EndGame;
 
-    private ScoreScript score = new();
+    public AudioClip clip1;
+    public AudioClip clip2;
+    public AudioSource amogus;
 
+    private WaveController controller;
     public GameObject goscreen;
 
     [SerializeField] private bool m_isDead = false;
 
     private void Start()
     {
+        controller = FindObjectOfType<WaveController>();
+
         EndGame = FindObjectOfType<GameOver>();
 
         if (TryGetComponent(out characterStatHolder))
@@ -27,8 +32,8 @@ public class Health : MonoBehaviour
         }
         else
         {
-            CurrentHealth = maximumHealth;
-        }        
+            CurrentHealth = maximumHealth + controller.WaveNumber;
+        }
     }
 
     public void TakeDamage(int t_damage)
@@ -45,19 +50,29 @@ public class Health : MonoBehaviour
         }        
     }
 
+    public void Heal()
+    {
+        if (maximumHealth > CurrentHealth)
+            CurrentHealth++;
+    }
+
     public void Kill()
     {
         GameObject t_death = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(t_death, 5f);
 
+        var source = FindObjectOfType<HealthUI>().GetComponent<AudioSource>();
+
         if (gameObject.CompareTag("player"))
         {
             EndGame.DoStuff();
+            source.PlayOneShot(clip1, 1.0f);
+
             Destroy(gameObject);
         }
 
-        Destroy(gameObject);
-
         
+        source.PlayOneShot(clip2, 1.0f);
+        Destroy(gameObject); 
     }
 }

@@ -9,6 +9,9 @@ public class ProjectileBase : MonoBehaviour
 
     public GameObject particle;
 
+    public AudioClip clip;
+    public AudioSource audioSource;
+
     public void Initialize(int t_damage, int t_range, int t_speed)
     {
         damage = t_damage;
@@ -28,6 +31,8 @@ public class ProjectileBase : MonoBehaviour
         {
             if (t_collider.TryGetComponent(out Health t_health))
             {
+                var source = FindObjectOfType<HealthUI>().GetComponent<AudioSource>();
+                source.PlayOneShot(clip, 1.0f);
                 GameObject t_particle = Instantiate(particle, transform.position, Quaternion.identity);
                 Destroy(t_particle, 5f);
                 t_health.TakeDamage(damage);

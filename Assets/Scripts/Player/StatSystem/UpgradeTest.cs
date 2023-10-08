@@ -6,6 +6,9 @@ public class UpgradeTest : MonoBehaviour
     public SpriteRenderer sprite;
     public GameObject WaveMeme;
 
+    public AudioClip clip;
+    public AudioSource source;
+
     private void Start()
     {
         sprite.sprite = upgrade.icon;
@@ -21,6 +24,8 @@ public class UpgradeTest : MonoBehaviour
             t_generator.RemoveFromPool(upgrade);
 
             var sus = FindObjectOfType<UpgradeSpawner>();
+
+            source.PlayOneShot(clip);
 
             foreach(var mogus in sus.spawnPoints)
             {

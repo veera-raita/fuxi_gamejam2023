@@ -5,33 +5,41 @@ using UnityEngine;
 
 public class Description : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text descriptionText;
 
+    public GameObject description;
     public UpgradeBase upgrade;
+
+    private void Start()
+    {
+        HideDesc();
+    }
 
     private void Update()
     {
+        nameText.text = upgrade.upgradeName;
+        descriptionText.text = upgrade.upgradeDescription;
+        /*
         if (upgrade != null)
         {
             ShowDesc();
         }
-        else
+        
+        if (upgrade == null)
         {
             HideDesc();
         }
-
-        nameText.text = upgrade.upgradeName;
-        descriptionText.text = upgrade.upgradeDescription;
+        */
     }
 
     public void ShowDesc()
     {
-        gameObject.SetActive(true);
+        description.SetActive(true);
     }
 
     public void HideDesc()
     {
-        gameObject.SetActive(false);
+        description.SetActive(false);
     }
 }
