@@ -6,6 +6,7 @@ public class UpgradeSpawner : MonoBehaviour
     [Space, Header("Upgrade Generation")]
     [SerializeField] private UpgradePool profile;
     [SerializeField] private int amountOfChoices = 3;
+    private GameObject WaveYeag;
 
     [Space, Header("References")]
     public UpgradeTest itemPrefab;
@@ -31,6 +32,8 @@ public class UpgradeSpawner : MonoBehaviour
         GenerateUpgradeFromPool();
 
         SpawnDrops();
+        WaveYeag = GameObject.FindWithTag("GameController");
+        WaveYeag.GetComponent<WaveController>().wavecdhelp = true;
     }
 
     private void SpawnDrops()
