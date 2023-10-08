@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
 
     private CharacterStatHolder characterStatHolder;
 
+    [SerializeField] private GameObject GameOverScreen;
+
     private void Start()
     {
         if (TryGetComponent(out characterStatHolder))
@@ -40,5 +42,11 @@ public class Health : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died!");
         Destroy(gameObject);
+
+        if (gameObject.CompareTag("player"))
+        {
+            Debug.Log("GAMEOVER PLEASEJKHNDSKFLJ");
+            GameOverScreen.SetActive(true);
+        }
     }
 }
