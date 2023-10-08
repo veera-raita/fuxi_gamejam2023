@@ -13,7 +13,7 @@ public class WaveController : MonoBehaviour
     public bool wavecdhelp;
 
     public TMP_Text WaveN;
-    public TMP_Text WaveCnt;
+
 
     private UpgradeSpawner spawner;
 
@@ -52,7 +52,7 @@ public class WaveController : MonoBehaviour
 
         foreach(var health in enemies)
         {
-            health.GetComponent<Health>().TakeDamage(9999);
+            Destroy(health.gameObject);
         }
     }
 
@@ -60,16 +60,6 @@ public class WaveController : MonoBehaviour
     {
         WaveN.text = WaveNumber.ToString();
 
-        if (!WaveRunning && !wavecdhelp)
-        {
-            waver = waver - Time.deltaTime;
-            int WaveCountHelp = (int)waver;
-            WaveCnt.text = WaveCountHelp.ToString();
-        }
-        else
-        {
-            WaveCnt.text = 0.ToString();
-        }
 
     }
 }

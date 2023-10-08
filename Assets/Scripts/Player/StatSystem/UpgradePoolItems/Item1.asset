@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
+  m_Script: {fileID: 0}
   m_Name: Item1
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeBase
   upgradeName: Horse
-  upgradeDescription: teksti1
+  upgradeDescription: 
   icon: {fileID: 21300000, guid: b43fe814c5699b4479a8ea347c567d67, type: 3}
   m_statModifiers:
   - statToBoost: 0
-    value: 3
+    value: 2
+    method: 100
+  - statToBoost: 6
+    value: 2
     method: 100
