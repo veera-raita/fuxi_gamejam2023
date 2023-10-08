@@ -11,7 +11,11 @@ public class Health : MonoBehaviour
     private CharacterStatHolder characterStatHolder;
     private GameOver EndGame;
 
+    private ScoreScript score = new();
+
     public GameObject goscreen;
+
+    [SerializeField] private bool m_isDead = false;
 
     private void Start()
     {
@@ -36,12 +40,12 @@ public class Health : MonoBehaviour
             CurrentHealth -= t_damage;
             if (CurrentHealth <= 0)
             {
-                Kill();
+                Kill();              
             }
         }        
     }
 
-    private void Kill()
+    public void Kill()
     {
         GameObject t_death = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(t_death, 5f);

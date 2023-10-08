@@ -2,21 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+using System;
 
 public class ScoreScript : MonoBehaviour
 {
     public TMP_Text ScoreDisplay;
     public int ScoreCount;
 
-    // Start is called before the first frame update
-    void Start()
+    public event Action<int> Points;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ScoreDisplay.text = ScoreCount.ToString();
+    }
+
+    public void AddPoints(int t_amount)
+    {
+        ScoreCount += t_amount;
     }
 }
