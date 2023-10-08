@@ -366,8 +366,8 @@ MonoBehaviour:
   MenuClickPlayer: {fileID: 0}
   GameOverScrn: {fileID: 63739062}
   StatBlock: {fileID: 1806576778}
-  Waveinfo: {fileID: 0}
-  healthinfo: {fileID: 0}
+  Waveinfo: {fileID: 1806576778}
+  healthinfo: {fileID: 960149210}
 --- !u!114 &4605896
 MonoBehaviour:
   m_ObjectHideFlags: 0
