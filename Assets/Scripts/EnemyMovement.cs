@@ -27,6 +27,9 @@ public class EnemyMovement : MonoBehaviour
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), 
                 collision.gameObject.GetComponent<Collider2D>());
+
+            collision.gameObject.GetComponent<Health>().TakeDamage(1);
+            
         }
     }
 }

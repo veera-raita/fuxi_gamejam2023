@@ -6,6 +6,8 @@ public class UpgradeSpawner : MonoBehaviour
     [Space, Header("Upgrade Generation")]
     [SerializeField] private UpgradePool profile;
     [SerializeField] private int amountOfChoices = 3;
+    [SerializeField] private bool readyToSpawn = false;
+    [SerializeField] private bool gameHelper;
 
     [Space, Header("References")]
     public UpgradeTest itemPrefab;
@@ -13,7 +15,7 @@ public class UpgradeSpawner : MonoBehaviour
     [Space]
     [SerializeField] private List<UpgradeBase> choices;
 
-    private UpgradeGenerator generator;    
+    private UpgradeGenerator generator;
 
     private void Awake()
     {
@@ -21,19 +23,16 @@ public class UpgradeSpawner : MonoBehaviour
         generator.SetCharacterPool(profile);
     }
 
-    private void Update()
+    public void SpawnerCheck()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            choices ??= new List<UpgradeBase>();
+        choices ??= new List<UpgradeBase>();
 
-            choices.Clear();
-            choices.AddRange(generator.GetRandom(amountOfChoices));
+        choices.Clear();
+        choices.AddRange(generator.GetRandom(amountOfChoices));
 
-            GenerateUpgradeFromPool();
+        GenerateUpgradeFromPool();
 
-            SpawnDrops();
-        }
+        SpawnDrops();
     }
 
     private void SpawnDrops()

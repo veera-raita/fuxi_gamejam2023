@@ -3,13 +3,13 @@ using Cinemachine;
 
 public class CameraShake : MonoBehaviour
 {
-    public static CameraShake instance {  get; private set; }
+    public static CameraShake Instance { get; private set; }
     private CinemachineVirtualCamera cam;
     private float shakeTimer;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
         cam = GetComponent<CinemachineVirtualCamera>();
     }
 
