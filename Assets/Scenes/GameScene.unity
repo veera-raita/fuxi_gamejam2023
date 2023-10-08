@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 4605896}
   - component: {fileID: 4605895}
   - component: {fileID: 4605894}
-  - component: {fileID: 4605897}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -367,6 +366,8 @@ MonoBehaviour:
   MenuClickPlayer: {fileID: 0}
   GameOverScrn: {fileID: 63739062}
   StatBlock: {fileID: 1806576778}
+  Waveinfo: {fileID: 0}
+  healthinfo: {fileID: 0}
 --- !u!114 &4605896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,22 +381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 1162614704}
---- !u!114 &4605897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4605888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc49b6a7fa05ff459e8eac4aa462d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 1120266291}
-  descriptionText: {fileID: 1459660035}
-  description: {fileID: 1001813155}
-  upgrade: {fileID: 0}
 --- !u!1 &63739062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +993,6 @@ MonoBehaviour:
   WaveRunning: 0
   wavecdhelp: 0
   WaveN: {fileID: 651635851}
-  WaveCnt: {fileID: 0}
 --- !u!114 &272061182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,7 +1059,9 @@ MonoBehaviour:
   MenuClick: {fileID: 8300000, guid: efbda44eb0bcc0b498459e94d7afec3a, type: 3}
   MenuClickPlayer: {fileID: 4605893}
   GameOverScrn: {fileID: 63739062}
-  StatBlock: {fileID: 0}
+  StatBlock: {fileID: 1806576778}
+  Waveinfo: {fileID: 1967411253}
+  healthinfo: {fileID: 960149210}
 --- !u!1 &324107152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1237,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404699518}
-  - component: {fileID: 404699520}
   - component: {fileID: 404699519}
   m_Layer: 0
   m_Name: Spawner (2)
@@ -1310,20 +1295,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.75
---- !u!114 &404699520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404699517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3fdf1c406c7c8e44a2766763f5c42c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: {fileID: 4605897}
-  test: {fileID: 0}
 --- !u!1 &575651560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,7 +2519,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1052023359}
-  - component: {fileID: 1052023361}
   - component: {fileID: 1052023360}
   m_Layer: 0
   m_Name: Spawner (1)
@@ -2607,20 +2577,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.75
---- !u!114 &1052023361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052023358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3fdf1c406c7c8e44a2766763f5c42c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: {fileID: 4605897}
-  test: {fileID: 0}
 --- !u!1 &1105736802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,7 +3829,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10122,8 +10078,8 @@ Tilemap:
     m_Data: {fileID: 1113388125, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
   - m_RefCount: 18
     m_Data: {fileID: 1807662157, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 948292005, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 376
     m_Data: {fileID: -1836033476, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
   - m_RefCount: 1
@@ -10134,8 +10090,8 @@ Tilemap:
     m_Data: {fileID: -1731958155, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1731529744, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 948292005, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 372258291, guid: d6a2154dc7e6cb34b8f6e1e6f7cdee1c, type: 3}
   - m_RefCount: 5
@@ -11213,7 +11169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1628981060}
-  - component: {fileID: 1628981062}
   - component: {fileID: 1628981061}
   m_Layer: 0
   m_Name: Spawner
@@ -11272,20 +11227,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.75
---- !u!114 &1628981062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628981059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3fdf1c406c7c8e44a2766763f5c42c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: {fileID: 4605897}
-  test: {fileID: 0}
 --- !u!1 &1688421457
 GameObject:
   m_ObjectHideFlags: 0

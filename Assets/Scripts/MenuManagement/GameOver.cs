@@ -14,6 +14,8 @@ public class GameOver : MonoBehaviour
 
     public GameObject GameOverScrn;
     public GameObject StatBlock;
+    public GameObject Waveinfo;
+    public GameObject healthinfo;
 
 
     public void Start()
@@ -25,6 +27,8 @@ public class GameOver : MonoBehaviour
     {
         GameOverScrn.SetActive(true);
         StatBlock.SetActive(false);        
+        Waveinfo.SetActive(false);
+        healthinfo.SetActive(false);
         RestartButton.onClick.AddListener(() => Clicker());
         RestartButton.onClick.AddListener(() => SceneRestart());
         MenuButton.onClick.AddListener(() => Clicker());
