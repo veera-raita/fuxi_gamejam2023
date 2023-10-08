@@ -34,6 +34,7 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(WaveTimer);
         //Debug.Log("yeah " + Time.time);
         WaveRunning = false;
+        //tähän fanfaari sfx
         MassMurderScript();
         spawner.SpawnerCheck();
     }
