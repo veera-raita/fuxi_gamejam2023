@@ -13,10 +13,12 @@ public class GameOver : MonoBehaviour
     public AudioSource MenuClickPlayer;
 
     public GameObject GameOverScrn;
+    public GameObject StatBlock;
 
-    // Start is called before the first frame update
-    void Start()
-    {   
+
+    public void GameOverFunction()
+    {
+        StatBlock.SetActive(false);
         GameOverScrn.SetActive(true);
         RestartButton.onClick.AddListener(() => Clicker());
         RestartButton.onClick.AddListener(() => SceneRestart());
