@@ -362,8 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RestartButton: {fileID: 1239392730}
   MenuButton: {fileID: 1896130207}
-  MenuClick: {fileID: 0}
-  MenuClickPlayer: {fileID: 0}
+  MenuClick: {fileID: 8300000, guid: efbda44eb0bcc0b498459e94d7afec3a, type: 3}
+  MenuClickPlayer: {fileID: 4605893}
   GameOverScrn: {fileID: 63739062}
   StatBlock: {fileID: 1806576778}
   Waveinfo: {fileID: 1806576778}
