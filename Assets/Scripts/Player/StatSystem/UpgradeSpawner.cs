@@ -40,8 +40,7 @@ public class UpgradeSpawner : MonoBehaviour
     {
         for (int i = 0; i < choices.Count; i++)
         {
-            UpgradeTest t_upgrade = Instantiate(itemPrefab, spawnPoints[i].transform.position, Quaternion.identity);
-            t_upgrade.transform.parent = spawnPoints[i].transform;
+            UpgradeTest t_upgrade = spawnPoints[i].GetComponent<UpgradeTest>();
             t_upgrade.upgrade = choices[i];
         }
     }

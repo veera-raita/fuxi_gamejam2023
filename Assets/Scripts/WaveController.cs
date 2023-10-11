@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveController : MonoBehaviour
 {
@@ -11,10 +13,9 @@ public class WaveController : MonoBehaviour
     public bool WaveRunning;
     private float waver;
     public bool wavecdhelp;
-
-    public TMP_Text WaveN;
-
-
+    
+    public TMP_Text WaveN;    
+    public UpgradeTest[] Upgrades = new UpgradeTest[3];
     private UpgradeSpawner spawner;
 
     // Start is called before the first frame update
@@ -24,6 +25,11 @@ public class WaveController : MonoBehaviour
 
         WaveNumber = 0;
         StartCoroutine(Wave());
+    }
+
+    private void Update()
+    {
+        WaveN.text = WaveNumber.ToString();
     }
 
     public void StartWave()
@@ -46,6 +52,22 @@ public class WaveController : MonoBehaviour
         spawner.SpawnerCheck();
     }
 
+    public void UpgradeCheck()
+    {
+        Debug.Log("yeag");
+
+        for (int i = 0; i < Upgrades.Length; i++)
+        {
+            UpgradeTest upgrade = Upgrades[i];
+            upgrade.upgrade = null;
+        }
+    }
+
+    private void UpgradeRemove()
+    {
+        
+    }
+
     private void MassMurderScript()
     {
         var enemies = FindObjectsOfType<EnemyMovement>();
@@ -54,12 +76,5 @@ public class WaveController : MonoBehaviour
         {
             Destroy(health.gameObject);
         }
-    }
-
-    private void Update()
-    {
-        WaveN.text = WaveNumber.ToString();
-
-
     }
 }
