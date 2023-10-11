@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private float screenPadding = 0;
@@ -9,13 +8,24 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Vector2 m_movementVector;
     [SerializeField] private float m_currentSpeed;
 
+    private Health m_health;
     private CharacterStatHolder m_characterStatHolder;
     private Rigidbody2D rb;
+
+    private GameOver EndGame;
+
+    public bool IsDead { get; private set; }
 
     private void Start()
     {
         m_characterStatHolder = GetComponent<CharacterStatHolder>();
         rb = GetComponent<Rigidbody2D>();
+
+        m_health = GetComponent<Health>();
+
+        EndGame = FindObjectOfType<GameOver>();
+
+        m_health.OnDie += OnDie;
     }
 
     private void Update()
@@ -36,6 +46,14 @@ public class MovementController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + m_currentSpeed * Time.fixedDeltaTime * m_movementVector);     
+    }
+
+    private void OnDie()
+    {
+        IsDead = true;
+
+        EndGame.DoStuff();
+        Destroy(gameObject);
     }
 
     private void CalculateSpeed()

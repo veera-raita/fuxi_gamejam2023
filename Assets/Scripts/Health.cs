@@ -1,30 +1,32 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    [Space, Header("Health Settings")]
     [SerializeField] private int maximumHealth = 50;
-    public GameObject deathEffect;
+
+    public UnityAction<int, GameObject> OnDamaged;
+    public UnityAction<int> OnHealed;
+    public UnityAction OnDie;
+
+    public int CurrentHealth { get; set; }
+    public bool Invincible { get; set; }
+    
     public Transform damagePopup;
-    public bool invincible = false;
-    public int CurrentHealth { get; private set; }
 
     private CharacterStatHolder characterStatHolder;
-    private GameOver EndGame;
+    
 
-    public AudioClip clip1;
-    public AudioClip clip2;
     public AudioSource amogus;
 
     private WaveController controller;
-    public GameObject goscreen;
 
-    [SerializeField] private bool m_isDead = false;
+    private bool m_isDead;
 
     private void Start()
     {
         controller = FindObjectOfType<WaveController>();
-
-        EndGame = FindObjectOfType<GameOver>();
 
         if (TryGetComponent(out characterStatHolder))
         {
@@ -36,43 +38,59 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int t_damage)
+    public void TakeDamage(int t_damage, GameObject t_damageSource)
     {
-        if (!invincible)
+        if (Invincible) { return; }
+
+        Transform t_damagePopup = Instantiate(damagePopup, transform.position, Quaternion.identity);
+        t_damagePopup.GetComponent<DamagePopup>().Setup(t_damage);
+
+        if (!m_isDead)
         {
-            Transform t_damagePopup = Instantiate(damagePopup, transform.position, Quaternion.identity);
-            t_damagePopup.GetComponent<DamagePopup>().Setup(t_damage);
             CurrentHealth -= t_damage;
+            CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maximumHealth);
+
+            OnDamaged?.Invoke(t_damage, t_damageSource);
+
             if (CurrentHealth <= 0)
             {
-                Kill();              
+                CurrentHealth = 0;
+                HandleDeath();
             }
         }        
     }
 
-    public void Heal()
+    public bool CanAddHealth => CurrentHealth < maximumHealth;
+    public void AddHealth(int t_amount)
     {
-        if (maximumHealth > CurrentHealth)
-            CurrentHealth++;
+        if (CurrentHealth < maximumHealth)
+        {
+            CurrentHealth += t_amount;
+            CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maximumHealth);
+        }
+
+        if (CurrentHealth > maximumHealth)
+        {
+            CurrentHealth = maximumHealth;
+        }
     }
 
     public void Kill()
     {
-        GameObject t_death = Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(t_death, 5f);
+        CurrentHealth = 0;
+        OnDamaged?.Invoke(maximumHealth, null);
 
-        var source = FindObjectOfType<HealthUI>().GetComponent<AudioSource>();
+        HandleDeath();
+    }
 
-        if (gameObject.CompareTag("player"))
+    private void HandleDeath()
+    {
+        if (m_isDead) { return; }
+
+        if (CurrentHealth <= 0f)
         {
-            EndGame.DoStuff();
-            source.PlayOneShot(clip1, 1.0f);
-
-            Destroy(gameObject);
+            m_isDead = true;
+            OnDie?.Invoke();
         }
-
-        
-        source.PlayOneShot(clip2, 1.0f);
-        Destroy(gameObject); 
     }
 }

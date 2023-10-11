@@ -40,16 +40,15 @@ public class UpgradeTest : MonoBehaviour
         {
             if (upgrade != null)
             {
-                Debug.Log(upgrade);
                 upgrade.Create(t_collider.gameObject);
                 generator.RemoveFromPool(upgrade);
+
+                source.PlayOneShot(clip);
+
+                waveController.UpgradeCheck();
+
+                waveController.StartWave();
             }
-
-            source.PlayOneShot(clip);
-
-            waveController.UpgradeCheck();
-
-            waveController.StartWave();
         }
     }
 }

@@ -35,7 +35,7 @@ public class ProjectileBase : MonoBehaviour
                 source.PlayOneShot(clip, 1.0f);
                 GameObject t_particle = Instantiate(particle, transform.position, Quaternion.identity);
                 Destroy(t_particle, 5f);
-                t_health.TakeDamage(damage);
+                t_health.TakeDamage(damage, gameObject);
                 Destroy(gameObject);
             }
         }        
