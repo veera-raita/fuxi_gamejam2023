@@ -1,42 +1,54 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UpgradeTest : MonoBehaviour
 {
-    public UpgradeBase upgrade;
-    public SpriteRenderer sprite;
+    public UpgradeBase upgrade;    
     public GameObject WaveMeme;
+
+    public UnityAction upgradeCheck;
+
+    private UpgradeGenerator generator;
 
     public AudioClip clip;
     public AudioSource source;
     private WaveController waveController;
+    private SpriteRenderer sprite;
 
     private void Start()
     {
-        sprite.sprite = upgrade.icon;
+        sprite = GetComponent<SpriteRenderer>();
         waveController = FindObjectOfType<WaveController>();
+        generator = FindObjectOfType<UpgradeGenerator>();
+    }
+
+    private void Update()
+    {
+        if (upgrade != null)
+        {
+            sprite.sprite = upgrade.icon;
+        }
+        else
+        {
+            sprite.sprite = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D t_collider)
     {
-        if (t_collider.GetComponent<CharacterStatHolder>())
+        if (t_collider.gameObject.CompareTag("player"))
         {
-            upgrade.Create(t_collider.gameObject);
-
-            UpgradeGenerator t_generator = FindObjectOfType<UpgradeGenerator>();
-            t_generator.RemoveFromPool(upgrade);
-
-            var sus = FindObjectOfType<UpgradeSpawner>();
-
-            source.PlayOneShot(clip);
-            Debug.Log("yay yay");
-
-            foreach(var mogus in sus.spawnPoints)
+            if (upgrade != null)
             {
-                Destroy(mogus.transform.GetChild(0).gameObject);
-                Debug.Log(mogus);
+                Debug.Log(upgrade);
+                upgrade.Create(t_collider.gameObject);
+                generator.RemoveFromPool(upgrade);
             }
 
-            Debug.Log("meowdy");
+            source.PlayOneShot(clip);
+
+            waveController.UpgradeCheck();
+
             waveController.StartWave();
         }
     }
