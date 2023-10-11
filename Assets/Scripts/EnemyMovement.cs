@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
 
         if (player != null)
         {
-            Debug.Log(speed);
             float realSpeed = speed * Time.deltaTime;        //randomize speeds a little bit
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, realSpeed);
         }

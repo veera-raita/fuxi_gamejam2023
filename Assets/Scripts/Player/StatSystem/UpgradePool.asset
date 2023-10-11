@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: UpgradePool
   m_EditorClassIdentifier: 
   PoolItems:
-  - {fileID: 11400000, guid: 79d107c996f932241acbfa58d14896d9, type: 2}
-  - {fileID: 11400000, guid: 408f7dcc57d029f439059908298d0a9d, type: 2}
-  - {fileID: 11400000, guid: d6d8fae374d065643848fc34c6ca43d7, type: 2}
-  - {fileID: 11400000, guid: a68c114ceb4ff1c4f99221d3318aa716, type: 2}
-  - {fileID: 11400000, guid: d9cfce3605d5f3248adaa926f43ec965, type: 2}
-  - {fileID: 11400000, guid: 3c5e92c2aa5fb5e4ea747048fe3a34f1, type: 2}
-  - {fileID: 11400000, guid: 84d142e6bb0c93d45adb4d6b0152f35c, type: 2}
+  - {fileID: 11400000, guid: 48550ab270a3bdd4991c81c7b74149bb, type: 2}
+  - {fileID: 11400000, guid: d8dabee5454bf224ead7dcf64541c6c5, type: 2}
+  - {fileID: 11400000, guid: 9b0858e78fe1fbc41bfc44432c9c965e, type: 2}

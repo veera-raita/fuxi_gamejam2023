@@ -8,10 +8,12 @@ public class UpgradeTest : MonoBehaviour
 
     public AudioClip clip;
     public AudioSource source;
+    private WaveController waveController;
 
     private void Start()
     {
         sprite.sprite = upgrade.icon;
+        waveController = FindObjectOfType<WaveController>();
     }
 
     private void OnTriggerEnter2D(Collider2D t_collider)
@@ -26,15 +28,16 @@ public class UpgradeTest : MonoBehaviour
             var sus = FindObjectOfType<UpgradeSpawner>();
 
             source.PlayOneShot(clip);
+            Debug.Log("yay yay");
 
             foreach(var mogus in sus.spawnPoints)
             {
                 Destroy(mogus.transform.GetChild(0).gameObject);
+                Debug.Log(mogus);
             }
 
-            WaveMeme = GameObject.FindWithTag("GameController");
             Debug.Log("meowdy");
-            WaveMeme.GetComponent<WaveController>().StartWave();
+            waveController.StartWave();
         }
     }
 }
