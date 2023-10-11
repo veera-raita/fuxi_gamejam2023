@@ -7,18 +7,23 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemies;
     private GameObject GameController;
     private bool GameHelper;
-    public int waveN;               //use this to slightly increase spawn speed every wave
+    public int waveN;
+    float rndDelay;                 //use this to slightly increase spawn speed every wave
                                     //maybe speed as well
 
     private void SpawnHandler()     //start all spawners
     {
-        float rndDelay = Random.Range(1.5f, 3.0f);
+        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+        if (rndDelay < 0.5f)
+        {
+            rndDelay = 0.5f;
+        }
         Invoke("SpawnEnemyUp", rndDelay);
-        rndDelay = Random.Range(1.5f, 3.0f);
+        rndDelay = Random.Range(3.0f, 4.5f);
         Invoke("SpawnEnemyDown", rndDelay);
-        rndDelay = Random.Range(1.5f, 3.0f);
+        rndDelay = Random.Range(3.0f, 4.5f);
         Invoke("SpawnEnemyRight", rndDelay);
-        rndDelay = Random.Range(1.5f, 3.0f);
+        rndDelay = Random.Range(3.0f, 4.5f);
         Invoke("SpawnEnemyLeft", rndDelay);
     }
 
@@ -27,28 +32,48 @@ public class Spawner : MonoBehaviour
         float rndX1 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(rndX1, 15), enemies[rnd].transform.rotation);
-        Invoke("SpawnEnemyUp", Random.Range(1.5f, 3.0f));
+        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+        if (rndDelay < 0.5f)
+        {
+            rndDelay = 0.5f;
+        }
+        Invoke("SpawnEnemyUp", rndDelay);
     }
     private void SpawnEnemyDown()
     {
         float rndX2 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(rndX2, -15), enemies[rnd].transform.rotation);
-        Invoke("SpawnEnemyDown", Random.Range(1.5f, 3.0f));
+        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+        if (rndDelay < 0.5f)
+        {
+            rndDelay = 0.5f;
+        }
+        Invoke("SpawnEnemyDown", rndDelay);
     }
     private void SpawnEnemyRight()
     {
         float rndY1 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(15, rndY1), enemies[rnd].transform.rotation);
-        Invoke("SpawnEnemyRight", Random.Range(1.5f, 3.0f));
+        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+        if (rndDelay < 0.5f)
+        {
+            rndDelay = 0.5f;
+        }
+        Invoke("SpawnEnemyRight", rndDelay);
     }
     private void SpawnEnemyLeft()
     {
         float rndY2 = Random.Range(-15.0f, 15.0f);
         int rnd = Random.Range(0, enemies.Length);
         Instantiate(enemies[rnd], new Vector3(-15, rndY2), enemies[rnd].transform.rotation);
-        Invoke("SpawnEnemyLeft", Random.Range(1.5f, 3.0f));
+        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+        if (rndDelay < 0.5f)
+        {
+            rndDelay = 0.5f;
+        }
+        Invoke("SpawnEnemyLeft", rndDelay);
     }
 
     void Start()
