@@ -27,10 +27,12 @@ public class UpgradeTest : MonoBehaviour
         if (upgrade != null)
         {
             sprite.sprite = upgrade.icon;
+
         }
         else
         {
             sprite.sprite = null;
+
         }
     }
 

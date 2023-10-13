@@ -30,8 +30,6 @@ public class UpgradeGenerator : MonoBehaviour
             int t_randomNumber = Random.Range(1, 101); // 1-100
             List<UpgradePoolItem> t_possibleItems = new();
 
-            Debug.Log(t_randomNumber);
-
             foreach (UpgradePoolItem t_instance in t_upgradePool)
             {
                 if (t_randomNumber <= t_instance.upgrade.dropChance)
