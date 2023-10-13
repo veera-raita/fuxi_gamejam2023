@@ -14,7 +14,7 @@ public class UpgradeBase : ScriptableObject
     public string upgradeName;
     public string upgradeDescription;
     public Sprite icon;
-    public ItemTier itemTier = ItemTier.Tier1;
+    public float dropChance;
 
     public List<StatModifier> m_statModifiers = new();
 

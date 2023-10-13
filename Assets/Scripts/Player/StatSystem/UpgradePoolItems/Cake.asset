@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Cake
   m_EditorClassIdentifier: 
   upgradeName: Slice of Cake (Tier I)
-  upgradeDescription: 
-  icon: {fileID: 0}
-  m_statModifiers: []
+  upgradeDescription: amogus
+  icon: {fileID: 21300000, guid: 6883ba6fe9e6aad42a69c916a96a53a0, type: 3}
+  dropChance: 100
+  m_statModifiers:
+  - statToBoost: 0
+    value: 2
+    method: 100
