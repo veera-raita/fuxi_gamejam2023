@@ -1,23 +1,22 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class UpgradeTest : MonoBehaviour
 {
     public UpgradeBase upgrade;    
     public GameObject WaveMeme;
 
-    public UnityAction upgradeCheck;
+    public SpriteRenderer sprite;
+    public SpriteRenderer glimmer;
 
     private UpgradeGenerator generator;
 
     public AudioClip clip;
     public AudioSource source;
     private WaveController waveController;
-    private SpriteRenderer sprite;
+    
 
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
         waveController = FindObjectOfType<WaveController>();
         generator = FindObjectOfType<UpgradeGenerator>();
     }
@@ -27,12 +26,13 @@ public class UpgradeTest : MonoBehaviour
         if (upgrade != null)
         {
             sprite.sprite = upgrade.icon;
-
+            glimmer.color = upgrade.glimmerColor;
+            glimmer.gameObject.SetActive(true);
         }
         else
         {
             sprite.sprite = null;
-
+            glimmer.gameObject.SetActive(false);
         }
     }
 
