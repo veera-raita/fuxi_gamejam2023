@@ -9,7 +9,7 @@ public class StatModifier
 {
     public CharacterStatHolder.Stat statToBoost;
     public float value;
-    public StatModifierMethod method;
+    public StatModifierMethod method = StatModifierMethod.Flat;
     public readonly int order;
 
     public StatModifier(float t_value, StatModifierMethod t_class, int t_order)

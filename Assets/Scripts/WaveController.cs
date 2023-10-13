@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class WaveController : MonoBehaviour
 {
@@ -54,18 +51,11 @@ public class WaveController : MonoBehaviour
 
     public void UpgradeCheck()
     {
-        Debug.Log("yeag");
-
         for (int i = 0; i < Upgrades.Length; i++)
         {
             UpgradeTest upgrade = Upgrades[i];
             upgrade.upgrade = null;
         }
-    }
-
-    private void UpgradeRemove()
-    {
-        
     }
 
     private void MassMurderScript()

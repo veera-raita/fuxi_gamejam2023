@@ -13,6 +13,8 @@ public class UpgradeGenerator : MonoBehaviour
         m_ownedUpgrades = new List<UpgradeBase>();
     }
 
+    
+
     public List<UpgradeBase> GetRandom(int t_amount)
     {
         return GetRandomFromPool(t_amount, m_upgradePool);
@@ -28,6 +30,9 @@ public class UpgradeGenerator : MonoBehaviour
         for (int i = 0; i < t_amount; i++)
         {
             UpgradePoolItem t_poolItem = t_upgradePool[Random.Range(0, t_upgradePool.Count)];
+
+
+
             while (t_list.Contains(t_poolItem.upgrade))
             {
                 t_poolItem = t_upgradePool[Random.Range(0, t_upgradePool.Count)];
@@ -37,6 +42,35 @@ public class UpgradeGenerator : MonoBehaviour
         }
 
         return t_list;
+    }
+
+    private UpgradeBase CalculateDropChance(UpgradeBase t_upgrade, List<UpgradeBase> t_list)
+    {
+        int t_randomNumber = Random.Range(1, 101); // 1-100
+        int t_chance = 100;
+
+        switch (t_upgrade.itemTier)
+        {
+            case (ItemTier.Tier1):
+                t_chance = 100;
+                break;
+            case (ItemTier.Tier2):
+                t_chance = 80;
+                break;
+            case (ItemTier.Tier3):
+                t_chance = 60;
+                break;
+        }
+
+        foreach (UpgradeBase t_instance in t_list)
+        {
+            if (t_randomNumber <= t_chance)
+            {
+                t_upgrade = t_instance;
+            }
+        }
+
+        return t_upgrade;
     }
 
     public void AddToPool(List<UpgradeBase> t_upgradePool)

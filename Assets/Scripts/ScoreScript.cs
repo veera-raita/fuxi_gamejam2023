@@ -10,12 +10,7 @@ public class ScoreScript : MonoBehaviour
     public TMP_Text ScoreDisplay;
     public int ScoreCount;
 
-    public event Action<int> Points;
-
-    private void Start()
-    {
-        
-    }
+    //public event Action<int> Points;
 
     private void Update()
     {

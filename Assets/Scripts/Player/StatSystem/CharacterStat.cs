@@ -5,7 +5,9 @@ using UnityEngine;
 public class CharacterStat
 {
     [SerializeField] private string name;
-    public float baseValue;
+    [SerializeField] private float baseValue;
+    [SerializeField] private float minimumValue, maximumValue;
+
     protected float totalValue;
     public virtual float CalculatedFinalValue
     {
@@ -65,6 +67,8 @@ public class CharacterStat
             {
                 t_finalValue *= 1 + t_modifier.value;
             }
+
+            t_finalValue = Mathf.Clamp(t_finalValue, minimumValue, maximumValue);
         }
 
         return (float)System.Math.Round(t_finalValue, 4);

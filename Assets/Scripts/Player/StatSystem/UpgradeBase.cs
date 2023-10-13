@@ -1,12 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemTier
+{
+    Tier1,
+    Tier2,
+    Tier3
+}
+
 [CreateAssetMenu(menuName = "Upgrade", fileName = "New Upgrade")]
 public class UpgradeBase : ScriptableObject
 {
     public string upgradeName;
     public string upgradeDescription;
     public Sprite icon;
+    public ItemTier itemTier = ItemTier.Tier1;
 
     public List<StatModifier> m_statModifiers = new();
 
