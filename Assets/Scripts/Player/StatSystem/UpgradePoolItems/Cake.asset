@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
-  m_Name: New Upgrade 2
+  m_Name: Cake
   m_EditorClassIdentifier: 
-  upgradeName: 
+  upgradeName: Slice of Cake (Tier I)
   upgradeDescription: 
-  icon: {fileID: 21300000, guid: 21a0e3420a519db40a8fe51263cb9b6d, type: 3}
-  m_statModifiers:
-  - statToBoost: 0
-    value: 5
-    method: 100
+  icon: {fileID: 0}
+  m_statModifiers: []

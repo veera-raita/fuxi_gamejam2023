@@ -58,11 +58,6 @@ public class WaveController : MonoBehaviour
         }
     }
 
-    private void UpgradeRemove()
-    {
-        
-    }
-
     private void MassMurderScript()
     {
         var enemies = FindObjectsOfType<EnemyMovement>();
