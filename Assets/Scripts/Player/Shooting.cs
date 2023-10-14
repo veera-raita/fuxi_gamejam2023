@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
     public AudioClip shootSound;
     public AudioSource shootSoundSource;
 
-    private float cooldown = 0;
+    private float cooldown = 0f;
 
     private void Start()
     {
@@ -27,13 +27,13 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
-        if (cooldown + m_characterStatHolder.RateOfFire <= Time.time)
+        if (Time.time >= cooldown)
         {
             SpawnProjectile();
             shootSoundSource.PlayOneShot(shootSound, 1.0f);
 
             CameraShake.Instance.ShakeCamera(5f, .1f);
-            cooldown = Time.time;
+            cooldown = Time.time + m_characterStatHolder.RateOfFire;
         }       
     }
 
