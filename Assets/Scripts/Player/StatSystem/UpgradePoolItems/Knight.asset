@@ -19,5 +19,8 @@ MonoBehaviour:
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}
   m_statModifiers:
   - statToBoost: 0
-    value: 2
+    value: 0.25
+    method: 100
+  - statToBoost: 6
+    value: -0.5
     method: 100

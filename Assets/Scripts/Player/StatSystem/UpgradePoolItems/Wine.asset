@@ -18,6 +18,9 @@ MonoBehaviour:
   dropChance: 100
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}
   m_statModifiers:
-  - statToBoost: 0
-    value: 2
+  - statToBoost: 7
+    value: 10
+    method: 100
+  - statToBoost: 5
+    value: 1
     method: 100

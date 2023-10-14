@@ -37,6 +37,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (CurrentHealth > maximumHealth)
+        {
+            CurrentHealth = maximumHealth;
+        }
+    }
+
     public void TakeDamage(int t_damage, GameObject t_damageSource)
     {
         if (Invincible) { return; }

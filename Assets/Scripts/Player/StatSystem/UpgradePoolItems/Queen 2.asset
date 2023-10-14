@@ -10,17 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
-  m_Name: Bishop
+  m_Name: Queen 2
   m_EditorClassIdentifier: 
-  upgradeName: Bishop Piece (Tier I)
+  upgradeName: Queen Piece (Tier I)
   upgradeDescription: amogus
-  icon: {fileID: 21300000, guid: 6883ba6fe9e6aad42a69c916a96a53a0, type: 3}
+  icon: {fileID: 21300000, guid: 21a0e3420a519db40a8fe51263cb9b6d, type: 3}
   dropChance: 100
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}
   m_statModifiers:
   - statToBoost: 2
     value: -0.05
     method: 100
-  - statToBoost: 7
-    value: -5
+  - statToBoost: 4
+    value: 0.5
+    method: 100
+  - statToBoost: 0
+    value: 0.25
+    method: 100
+  - statToBoost: 3
+    value: 1
     method: 100
