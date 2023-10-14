@@ -16,7 +16,6 @@ public class Health : MonoBehaviour
     public Transform damagePopup;
 
     private CharacterStatHolder characterStatHolder;
-    
 
     public AudioSource amogus;
 

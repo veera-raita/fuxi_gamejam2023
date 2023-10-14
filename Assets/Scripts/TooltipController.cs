@@ -3,13 +3,12 @@ using UnityEngine;
 public class TooltipController : MonoBehaviour
 {
     private UpgradeTooltip tooltip;
-    private UpgradeTest m_handler;
+    public UpgradeTest m_handler;
     private UpgradeBase m_upgrade;
 
     private void Start()
     {
         tooltip = FindObjectOfType<UpgradeTooltip>();
-        m_handler = GetComponentInParent<UpgradeTest>();
     }
 
     private void Update()

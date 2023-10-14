@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class UpgradeTest : MonoBehaviour
 {
-    public UpgradeBase upgrade;    
-    public GameObject WaveMeme;
+    public UpgradeBase upgrade;
 
     public SpriteRenderer sprite;
     public SpriteRenderer glimmer;
-
-    private UpgradeGenerator generator;
 
     public AudioClip clip;
     public AudioSource source;
@@ -18,7 +15,6 @@ public class UpgradeTest : MonoBehaviour
     private void Start()
     {
         waveController = FindObjectOfType<WaveController>();
-        generator = FindObjectOfType<UpgradeGenerator>();
     }
 
     private void Update()
@@ -43,7 +39,8 @@ public class UpgradeTest : MonoBehaviour
             if (upgrade != null)
             {
                 upgrade.Create(t_collider.gameObject);
-                generator.RemoveFromPool(upgrade);
+                FindObjectOfType<UpgradeGenerator>().RemoveFromPool(upgrade);
+                FindObjectOfType<UpgradeTooltip>().HideTooltip();
 
                 source.PlayOneShot(clip);
 

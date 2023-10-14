@@ -9,7 +9,6 @@ public class UpgradeSpawner : MonoBehaviour
     private GameObject WaveYeag;
 
     [Space, Header("References")]
-    public UpgradeTest itemPrefab;
     public Transform[] spawnPoints = new Transform[3];
     [Space]
     [SerializeField] private List<UpgradeBase> choices;
@@ -40,7 +39,7 @@ public class UpgradeSpawner : MonoBehaviour
     {
         for (int i = 0; i < choices.Count; i++)
         {
-            UpgradeTest t_upgrade = spawnPoints[i].GetComponent<UpgradeTest>();
+            UpgradeTest t_upgrade = spawnPoints[i].GetComponentInChildren<UpgradeTest>();
             t_upgrade.upgrade = choices[i];
         }
     }
