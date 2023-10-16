@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Queen 1
   m_EditorClassIdentifier: 
   upgradeName: Queen Piece (Tier I)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: 21a0e3420a519db40a8fe51263cb9b6d, type: 3}
   dropChance: 100
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}

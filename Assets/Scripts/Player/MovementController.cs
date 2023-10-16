@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovementController : MonoBehaviour
@@ -11,6 +13,8 @@ public class MovementController : MonoBehaviour
     private Health m_health;
     private CharacterStatHolder m_characterStatHolder;
     private Rigidbody2D rb;
+
+    public UnityAction onDamaged;
 
     private GameOver EndGame;
 
@@ -26,6 +30,7 @@ public class MovementController : MonoBehaviour
         EndGame = FindObjectOfType<GameOver>();
 
         m_health.OnDie += OnDie;
+        m_health.OnDamaged += OnDamaged;
     }
 
     private void Update()
@@ -46,6 +51,24 @@ public class MovementController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + m_currentSpeed * Time.fixedDeltaTime * m_movementVector);     
+    }
+
+    private void OnDamaged(int t_damage, GameObject t_damageSource)
+    {
+        if (t_damageSource && t_damageSource.GetComponent<EnemyMovement>())
+        {
+            onDamaged?.Invoke();
+
+            m_health.Invincible = true;
+            StartCoroutine(IFrames());
+        }
+    }
+
+    private IEnumerator IFrames()
+    {
+        yield return new WaitForSeconds(1);
+
+        m_health.Invincible = false;
     }
 
     private void OnDie()

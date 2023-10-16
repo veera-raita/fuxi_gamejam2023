@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower 1
   m_EditorClassIdentifier: 
   upgradeName: Tower Piece (Tier II)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: 3ce9e168bd70ec448aec38842e9b8c4a, type: 3}
   dropChance: 100
   glimmerColor: {r: 0, g: 0.3882196, b: 1, a: 1}

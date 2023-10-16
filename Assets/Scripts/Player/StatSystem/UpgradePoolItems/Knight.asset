@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   upgradeName: Knight Piece (Tier I)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: b43fe814c5699b4479a8ea347c567d67, type: 3}
   dropChance: 100
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}

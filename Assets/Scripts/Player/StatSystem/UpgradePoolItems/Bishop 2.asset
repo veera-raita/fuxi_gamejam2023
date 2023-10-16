@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bishop 2
   m_EditorClassIdentifier: 
   upgradeName: Bishop Piece (Tier III)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: 6883ba6fe9e6aad42a69c916a96a53a0, type: 3}
   dropChance: 100
   glimmerColor: {r: 0.7881236, g: 0, b: 1, a: 1}
