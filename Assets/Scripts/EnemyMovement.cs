@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private GameObject GameManager;
     public float speed = 2.0f;
 
+    [SerializeField] private GameObject peasantHead;
+
     public GameObject deathEffect;
 
     public AudioClip clip2;
@@ -50,6 +52,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDie()
     {
+        if (m_health.m_isDead)
+        {
+            int dropChance = 100;
+            int randDrop = Random.Range(0, 101);
+
+            if (randDrop <= dropChance)
+            {
+                Instantiate(peasantHead, transform.position, Quaternion.identity);
+            }
+        }
         GameObject t_death = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(t_death, 5f);
 
