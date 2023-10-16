@@ -1,10 +1,11 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [Space, Header("Health Settings")]
-    [SerializeField] private int maximumHealth = 50;
+    [SerializeField] public int maximumHealth = 50;
 
     public UnityAction<int, GameObject> OnDamaged;
     public UnityAction<int> OnHealed;
@@ -21,7 +22,9 @@ public class Health : MonoBehaviour
 
     private WaveController controller;
 
-    private bool m_isDead;
+    public bool CanAddHealth;
+
+    public bool m_isDead;
 
     private void Start()
     {
@@ -39,6 +42,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
+        CanAddHealth = CurrentHealth < maximumHealth;
         if (CurrentHealth > maximumHealth)
         {
             CurrentHealth = maximumHealth;
@@ -67,7 +71,6 @@ public class Health : MonoBehaviour
         }        
     }
 
-    public bool CanAddHealth => CurrentHealth < maximumHealth;
     public void AddHealth(int t_amount)
     {
         if (CurrentHealth < maximumHealth)

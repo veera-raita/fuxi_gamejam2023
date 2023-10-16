@@ -49,13 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 5
-  deathEffect: {fileID: 4429920631967803801, guid: 8d18b9a5c0bbf2049b7604f941028eb6, type: 3}
   damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
-  invincible: 0
-  clip1: {fileID: 8300000, guid: 33b5233fec7eea44d9155654db3d5717, type: 3}
-  clip2: {fileID: 8300000, guid: 186d6d3d8f8156b40ab3f4d11ef5502d, type: 3}
   amogus: {fileID: 4713465269162017616}
-  goscreen: {fileID: 0}
   m_isDead: 0
 --- !u!114 &8184023668359615882
 MonoBehaviour:
@@ -70,6 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  peasantHead: {fileID: 6707138847301178015, guid: 419502cebbf11f540b120d8ff6014e9a, type: 3}
+  deathEffect: {fileID: 0}
+  clip2: {fileID: 0}
 --- !u!58 &-589298950826542593
 CircleCollider2D:
   m_ObjectHideFlags: 0

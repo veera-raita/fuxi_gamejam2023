@@ -51,6 +51,7 @@ MonoBehaviour:
   maximumHealth: 8
   damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
   amogus: {fileID: 6828006192602624947}
+  m_isDead: 0
 --- !u!114 &1150623991322563458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  peasantHead: {fileID: 6707138847301178015, guid: 419502cebbf11f540b120d8ff6014e9a, type: 3}
   deathEffect: {fileID: 4429920631967803801, guid: 8d18b9a5c0bbf2049b7604f941028eb6, type: 3}
   clip2: {fileID: 8300000, guid: 882f293609448b043b52a4e39020f526, type: 3}
 --- !u!58 &3454766984956031044
