@@ -32,7 +32,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-
         if (player != null)
         {
             float realSpeed = speed * Time.deltaTime;        //randomize speeds a little bit
@@ -45,8 +44,6 @@ public class EnemyMovement : MonoBehaviour
         if (t_damageSource && !t_damageSource.GetComponent<EnemyMovement>())
         {
             onDamaged?.Invoke();
-            
-
         }
     }
 
@@ -71,15 +68,14 @@ public class EnemyMovement : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("player"))
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), 
-                collision.gameObject.GetComponent<Collider2D>());
+            //Physics2D.IgnoreCollision(GetComponent<Collider2D>(),
+              //  collision.gameObject.GetComponent<Collider2D>());
 
-            collision.gameObject.GetComponent<Health>().TakeDamage(1, gameObject);
-            
+            collision.gameObject.GetComponent<Health>().TakeDamage(1, gameObject);            
         }
     }
 }

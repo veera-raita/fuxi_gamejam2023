@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wine 2
   m_EditorClassIdentifier: 
   upgradeName: Bottle of Wine (Tier III)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: 3d8ff128520de78469f3a7618c18b66c, type: 3}
   dropChance: 100
   glimmerColor: {r: 0.7881236, g: 0, b: 1, a: 1}

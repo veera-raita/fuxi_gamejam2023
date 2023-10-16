@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Guillotine 1
   m_EditorClassIdentifier: 
   upgradeName: Guillotine (Tier I)
-  upgradeDescription: amogus
+  upgradeDescription: description
   icon: {fileID: 21300000, guid: 4c15ab578e1f9ba4bb7882b769077265, type: 3}
   dropChance: 100
   glimmerColor: {r: 1, g: 1, b: 1, a: 1}
