@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91a26b4cfd9c64b40ab37e6766e577e2
+guid: 7777ca4d613bb4d4da270d6fc74bfe14
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - FlutedGermanica
+  - Old London
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -40,7 +40,7 @@ public class WaveController : MonoBehaviour
         WaveRunning = true;
         WaveNumber++;
         waver = WaveCountdown;
-        WaveTimer = 10.0f + (5.0f * WaveNumber);
+        WaveTimer = 15.0f + (3.0f * WaveNumber);
         yield return new WaitForSeconds(WaveTimer);
         //Debug.Log("yeah " + Time.time);
         WaveRunning = false;

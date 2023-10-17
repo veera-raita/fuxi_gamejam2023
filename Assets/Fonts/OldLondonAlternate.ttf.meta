@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f246e595f3a84ae4eb737deffa666088
+guid: 242773c2be7693c4185aae7edb5aa94b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - ShadowedGermanica
+  - Old London Alternate
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

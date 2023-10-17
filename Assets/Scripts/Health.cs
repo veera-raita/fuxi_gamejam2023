@@ -36,16 +36,20 @@ public class Health : MonoBehaviour
         }
         else
         {
-            CurrentHealth = maximumHealth + controller.WaveNumber;
+            CurrentHealth = maximumHealth + (2 * controller.WaveNumber);
         }
     }
 
     private void Update()
     {
-        CanAddHealth = CurrentHealth < maximumHealth;
-        if (CurrentHealth > maximumHealth)
+        if (TryGetComponent(out characterStatHolder) && characterStatHolder.MaximumHealth < CurrentHealth)
         {
-            CurrentHealth = maximumHealth;
+            CurrentHealth = (int)characterStatHolder.MaximumHealth;
+            CanAddHealth = false;
+        }
+        else
+        {
+            CanAddHealth = CurrentHealth < maximumHealth;
         }
     }
 

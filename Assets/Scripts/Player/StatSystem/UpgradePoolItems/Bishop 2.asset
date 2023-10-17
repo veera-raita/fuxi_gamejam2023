@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Bishop 2
   m_EditorClassIdentifier: 
   upgradeName: Bishop Piece (Tier III)
-  upgradeDescription: description
+  upgradeDescription: Come on, shoot faster!!
   icon: {fileID: 21300000, guid: 6883ba6fe9e6aad42a69c916a96a53a0, type: 3}
-  dropChance: 100
+  dropChance: 10
   glimmerColor: {r: 0.7881236, g: 0, b: 1, a: 1}
   m_statModifiers:
   - statToBoost: 2
