@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8760f9fb1ec7a2f428a0b3b731a29d13, type: 3}
   m_Name: Guillotine 2
   m_EditorClassIdentifier: 
-  upgradeName: Guillotine (Tier I)
-  upgradeDescription: description
+  upgradeName: Guillotine (Tier III)
+  upgradeDescription: NIGHTMARENIGHTMARENIGHTMARE
   icon: {fileID: 21300000, guid: 4c15ab578e1f9ba4bb7882b769077265, type: 3}
-  dropChance: 100
-  glimmerColor: {r: 1, g: 1, b: 1, a: 1}
+  dropChance: 10
+  glimmerColor: {r: 0.7882353, g: 0, b: 1, a: 1}
   m_statModifiers:
   - statToBoost: 1
     value: -3

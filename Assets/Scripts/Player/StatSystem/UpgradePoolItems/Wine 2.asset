@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Wine 2
   m_EditorClassIdentifier: 
   upgradeName: Bottle of Wine (Tier III)
-  upgradeDescription: description
+  upgradeDescription: Your favorite vintage!
   icon: {fileID: 21300000, guid: 3d8ff128520de78469f3a7618c18b66c, type: 3}
-  dropChance: 100
+  dropChance: 5
   glimmerColor: {r: 0.7881236, g: 0, b: 1, a: 1}
   m_statModifiers:
   - statToBoost: 7
-    value: 30
+    value: 45
     method: 100
   - statToBoost: 5
     value: 3
+    method: 100
+  - statToBoost: 6
+    value: -1.2
     method: 100

@@ -16,6 +16,8 @@ public class MovementController : MonoBehaviour
 
     public UnityAction onDamaged;
 
+    [SerializeField] private SpriteRenderer PlayerSprite;
+
     private GameOver EndGame;
 
     public bool IsDead { get; private set; }
@@ -61,6 +63,7 @@ public class MovementController : MonoBehaviour
 
             m_health.Invincible = true;
             StartCoroutine(IFrames());
+            StartCoroutine(SpriteFlicker());
         }
     }
 
@@ -69,6 +72,25 @@ public class MovementController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         m_health.Invincible = false;
+    }
+
+    private IEnumerator SpriteFlicker()
+    {
+        PlayerSprite.color = new Color(PlayerSprite.color.r, PlayerSprite.color.g, PlayerSprite.color.b, 0.7f);
+        yield return new WaitForSeconds(0.2f);
+        PlayerSprite.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        PlayerSprite.color = new Color(PlayerSprite.color.r, PlayerSprite.color.g, PlayerSprite.color.b, 0.7f);
+        yield return new WaitForSeconds(0.2f);
+        PlayerSprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        PlayerSprite.color = new Color(PlayerSprite.color.r, PlayerSprite.color.g, PlayerSprite.color.b, 0.7f);
+        yield return new WaitForSeconds(0.1f);
+        PlayerSprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        PlayerSprite.color = new Color(PlayerSprite.color.r, PlayerSprite.color.g, PlayerSprite.color.b, 0.7f);
+        yield return new WaitForSeconds(0.1f);
+        PlayerSprite.color = Color.white;
     }
 
     private void OnDie()

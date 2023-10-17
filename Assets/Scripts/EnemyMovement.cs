@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (m_health.m_isDead)
         {
-            int dropChance = 100;
+            int dropChance = 15;
             int randDrop = Random.Range(0, 101);
 
             if (randDrop <= dropChance)

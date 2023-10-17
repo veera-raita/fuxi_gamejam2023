@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee4f37ad0523f1746ae36ca50293b6a9
+guid: bb34183e77f835845a51a15fa57eb045
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - EmbossedGermanica
+  - Old London Alternate
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
