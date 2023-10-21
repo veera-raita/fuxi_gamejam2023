@@ -24,6 +24,9 @@ public class UpgradeTooltip : MonoBehaviour
 
     public void HideTooltip()
     {
-        panel.SetActive(false);
+        if (panel != null)
+        {
+            panel.SetActive(false);
+        }
     }
 }
