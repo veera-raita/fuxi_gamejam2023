@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class HealthDrop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float timer = 0;
+
+    private void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer >= 15) { Destroy(gameObject); }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,11 +20,5 @@ public class HealthDrop : MonoBehaviour
             collision.GetComponent<Health>().AddHealth(1);
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
