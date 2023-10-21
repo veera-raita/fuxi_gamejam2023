@@ -6,6 +6,7 @@ public class HealthDrop : MonoBehaviour
 {
     public float timer = 0;
     public SpriteRenderer HeadSprite;
+    [SerializeField] private AudioClip splat;
 
     private void Start()
     {
@@ -51,6 +52,8 @@ public class HealthDrop : MonoBehaviour
         {
             collision.GetComponent<Health>().AddHealth(1);
             Destroy(gameObject);
+            AudioSource splatSource = GameObject.FindWithTag("canvas").GetComponent<AudioSource>();
+            splatSource.PlayOneShot(splat, 1.0f);
         }
     }
 }
