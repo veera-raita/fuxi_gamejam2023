@@ -165,3 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bb494b099ac8b4eb75adf7ae4853b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  HeadSprite: {fileID: 0}
+  splat: {fileID: 8300000, guid: af7f62e062af5e046a14d61b80982f41, type: 3}
