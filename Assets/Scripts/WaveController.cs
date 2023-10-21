@@ -45,8 +45,9 @@ public class WaveController : MonoBehaviour
         //Debug.Log("yeah " + Time.time);
         WaveRunning = false;
         wavecdhelp = false;
-        MassMurderScript();
+        yield return new WaitForSeconds(5);
         spawner.SpawnerCheck();
+        MassMurderScript();
     }
 
     public void UpgradeCheck()
