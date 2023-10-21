@@ -42,6 +42,11 @@ public class UpgradeTest : MonoBehaviour
                 FindObjectOfType<UpgradeGenerator>().RemoveFromPool(upgrade);
                 FindObjectOfType<UpgradeTooltip>().HideTooltip();
 
+                if (upgrade.upgradeName.Contains("Cake"))
+                {
+                    t_collider.GetComponent<Health>().AddHealth((int)upgrade.m_statModifiers[0].value);
+                }
+
                 source.PlayOneShot(clip);
 
                 waveController.UpgradeCheck();

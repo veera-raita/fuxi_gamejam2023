@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2080979803490040080}
   - component: {fileID: 8184023668359615882}
   - component: {fileID: -589298950826542593}
+  - component: {fileID: -5778281979666499552}
   - component: {fileID: 4713465269162017616}
   m_Layer: 0
   m_Name: Enemy_Torch
@@ -51,6 +52,7 @@ MonoBehaviour:
   maximumHealth: 5
   damagePopup: {fileID: 585362783958999973, guid: 69a5700662d187d4ba44511b1db64f1d, type: 3}
   amogus: {fileID: 4713465269162017616}
+  CanAddHealth: 0
   m_isDead: 0
 --- !u!114 &8184023668359615882
 MonoBehaviour:
@@ -64,10 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52704fb6de9509144b62881561ff8505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1
   peasantHead: {fileID: 6707138847301178015, guid: 419502cebbf11f540b120d8ff6014e9a, type: 3}
-  deathEffect: {fileID: 0}
-  clip2: {fileID: 0}
+  deathEffect: {fileID: 4429920631967803801, guid: 8d18b9a5c0bbf2049b7604f941028eb6, type: 3}
+  clip2: {fileID: 8300000, guid: 882f293609448b043b52a4e39020f526, type: 3}
 --- !u!58 &-589298950826542593
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -97,12 +99,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!50 &-5778281979666499552
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498284433645927738}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!82 &4713465269162017616
 AudioSource:
   m_ObjectHideFlags: 0
