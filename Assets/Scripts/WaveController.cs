@@ -5,10 +5,9 @@ using UnityEngine;
 public class WaveController : MonoBehaviour
 {
     public int WaveNumber;
-    public float WaveCountdown = 3;
+    public float WaveCountdown = 1;
     public float WaveTimer;
     public bool WaveRunning;
-    private float waver;
     public bool wavecdhelp;
     
     public TMP_Text WaveN;    
@@ -39,7 +38,6 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(WaveCountdown);
         WaveRunning = true;
         WaveNumber++;
-        waver = WaveCountdown;
         WaveTimer = 15.0f + (3.0f * WaveNumber);
         yield return new WaitForSeconds(WaveTimer);
         //Debug.Log("yeah " + Time.time);

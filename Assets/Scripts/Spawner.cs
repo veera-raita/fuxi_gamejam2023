@@ -7,73 +7,79 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemies;
     private GameObject GameController;
     private bool GameHelper;
-    public int waveN;
-    float rndDelay;                 //use this to slightly increase spawn speed every wave
-                                    //maybe speed as well
+    private int waveN;
+    float rndDelay;
 
     private void SpawnHandler()     //start all spawners
     {
-        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
-        if (rndDelay < 0.5f)
-        {
-            rndDelay = 0.5f;
-        }
-        Invoke("SpawnEnemyUp", rndDelay);
-        rndDelay = Random.Range(3.0f, 4.5f);
-        Invoke("SpawnEnemyDown", rndDelay);
-        rndDelay = Random.Range(3.0f, 4.5f);
-        Invoke("SpawnEnemyRight", rndDelay);
-        rndDelay = Random.Range(3.0f, 4.5f);
-        Invoke("SpawnEnemyLeft", rndDelay);
+        StartCoroutine(SpawnEnemyN());
+        StartCoroutine(SpawnEnemyS());
+        StartCoroutine(SpawnEnemyR());
+        StartCoroutine(SpawnEnemyL());
     }
 
-    private void SpawnEnemyUp()
+    private IEnumerator SpawnEnemyN()   //spawns enemies north
     {
-        float rndX1 = Random.Range(-15.0f, 15.0f);
-        int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(rndX1, 15), enemies[rnd].transform.rotation);
-        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
-        if (rndDelay < 0.5f)
+        while (GameController.GetComponent<WaveController>().WaveRunning == true)
         {
-            rndDelay = 0.5f;
+            float rndX1 = Random.Range(-15.0f, 15.0f);
+            int rnd = Random.Range(0, enemies.Length);
+            Instantiate(enemies[rnd], new Vector3(rndX1, 15), enemies[rnd].transform.rotation);
+            rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+            if (rndDelay < 0.5f)
+            {
+                rndDelay = 0.5f;
+            }
+            yield return new WaitForSeconds(rndDelay);
         }
-        Invoke("SpawnEnemyUp", rndDelay);
     }
-    private void SpawnEnemyDown()
+
+    private IEnumerator SpawnEnemyS()   //south
     {
-        float rndX2 = Random.Range(-15.0f, 15.0f);
-        int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(rndX2, -15), enemies[rnd].transform.rotation);
-        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
-        if (rndDelay < 0.5f)
+        while (GameController.GetComponent<WaveController>().WaveRunning == true)
         {
-            rndDelay = 0.5f;
+            float rndX2 = Random.Range(-15.0f, 15.0f);
+            int rnd = Random.Range(0, enemies.Length);
+            Instantiate(enemies[rnd], new Vector3(rndX2, -15), enemies[rnd].transform.rotation);
+            rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+            if (rndDelay < 0.5f)
+            {
+                rndDelay = 0.5f;
+            }
+            yield return new WaitForSeconds(rndDelay);
         }
-        Invoke("SpawnEnemyDown", rndDelay);
     }
-    private void SpawnEnemyRight()
+
+    private IEnumerator SpawnEnemyR()   //right
     {
-        float rndY1 = Random.Range(-15.0f, 15.0f);
-        int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(15, rndY1), enemies[rnd].transform.rotation);
-        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
-        if (rndDelay < 0.5f)
+        while (GameController.GetComponent<WaveController>().WaveRunning == true)
         {
-            rndDelay = 0.5f;
+            float rndY1 = Random.Range(-15.0f, 15.0f);
+            int rnd = Random.Range(0, enemies.Length);
+            Instantiate(enemies[rnd], new Vector3(15, rndY1), enemies[rnd].transform.rotation);
+            rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+            if (rndDelay < 0.5f)
+            {
+                rndDelay = 0.5f;
+            }
+            yield return new WaitForSeconds(rndDelay);
         }
-        Invoke("SpawnEnemyRight", rndDelay);
     }
-    private void SpawnEnemyLeft()
+
+    private IEnumerator SpawnEnemyL()   //left
     {
-        float rndY2 = Random.Range(-15.0f, 15.0f);
-        int rnd = Random.Range(0, enemies.Length);
-        Instantiate(enemies[rnd], new Vector3(-15, rndY2), enemies[rnd].transform.rotation);
-        rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
-        if (rndDelay < 0.5f)
+        while (GameController.GetComponent<WaveController>().WaveRunning == true)
         {
-            rndDelay = 0.5f;
+            float rndY2 = Random.Range(-15.0f, 15.0f);
+            int rnd = Random.Range(0, enemies.Length);
+            Instantiate(enemies[rnd], new Vector3(-15, rndY2), enemies[rnd].transform.rotation);
+            rndDelay = Random.Range(3.0f, 4.5f) - 0.1f * (float)waveN;
+            if (rndDelay < 0.5f)
+            {
+                rndDelay = 0.5f;
+            }
+            yield return new WaitForSeconds(rndDelay);
         }
-        Invoke("SpawnEnemyLeft", rndDelay);
     }
 
     void Start()
@@ -81,7 +87,6 @@ public class Spawner : MonoBehaviour
         Invoke("SpawnHandler", 2);
     }
 
-    // Update is called once per frame
     void Update()
     {
         GameController = GameObject.FindWithTag("GameController");
@@ -90,10 +95,11 @@ public class Spawner : MonoBehaviour
             CancelInvoke();
             GameHelper = true;
         }
-        if (GameController.GetComponent<WaveController>().WaveRunning == true && GameHelper == true)    //tässä yritys saada viholliset spawnaamaan vain kun
-        {                                                                                               //wave on oikeasti käynnissä. en tiedä kuin tärkeä GameHelper
+        if (GameController.GetComponent<WaveController>().WaveRunning == true && GameHelper == true)    //don't fuck with GameHelper it will break shit
+        {
             GameHelper = false;
             Invoke("SpawnHandler", 2);
         }
+        waveN = GameController.GetComponent<WaveController>().WaveNumber;
     }
 }
